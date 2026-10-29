@@ -54,7 +54,7 @@ nav.menu{display:flex;gap:18px;flex-wrap:wrap}nav.menu a{color:var(--ink);text-d
 .reason{display:grid;gap:4px;padding-bottom:16px;border-bottom:1px solid var(--line)}
 .reason:last-child{border-bottom:0}
 /* percorso */
-.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px;counter-reset:step}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:28px;counter-reset:step}
 .step{position:relative;padding-top:18px;border-top:2px solid var(--ink);display:grid;gap:6px;min-width:0}
 .step b{font-family:var(--display);font-size:1.25rem}
 .step .when{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--wine);font-weight:700}
@@ -109,16 +109,16 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   <div>
     <p class="eyebrow">Dietista iscritta all’Albo · in studio e online</p>
     <h1>Un percorso alimentare costruito sulla tua vita, con controlli regolari.</h1>
-    <p class="lead">Percorsi di 3 e 6 mesi per adulti e ragazzi: piano alimentare, lista della spesa e incontri programmati, in studio a Colognola ai Colli (Verona) oppure online.</p>
-    <div class="ctas"><a class="btn" href="#prenota">Richiedi un appuntamento</a><a class="btn ghost" href="#percorsi">Vedi i percorsi</a></div>
+    <p class="lead">Percorsi di 3 e 6 mesi per adulti e ragazzi: piano alimentare, lista della spesa e incontri programmati, in studio a Colognola ai Colli (Verona) oppure online. Si comincia con una breve chiamata conoscitiva, inclusa e senza impegno.</p>
+    <div class="ctas"><a class="btn" href="#prenota">Prenota una chiamata conoscitiva</a><a class="btn ghost" href="#percorsi">Vedi i percorsi</a></div>
   </div>
   <aside class="card-id" aria-label="Dati professionali">
     <span class="badge">Professionista sanitaria</span>
     <dl>
       <dt>Professione</dt><dd>Dietista</dd>
-      <dt>Albo</dt><dd>Ordine TSRM e PSTRP di <span class="todo">[provincia]</span>, n. <span class="todo">[numero]</span></dd>
+      <dt>Albo</dt><dd>Ordine TSRM e PSTRP di Verona, n. 0051</dd>
       <dt>Formazione</dt><dd>Laurea in Dietistica · Medicina e Chirurgia, ultimo anno (Università di Bologna)</dd>
-      <dt>Studio</dt><dd>Colognola ai Colli (VR)</dd>
+      <dt>Studio</dt><dd>Via Stra 67, Colognola ai Colli (VR)</dd>
       <dt>Online</dt><dd>In tutta Italia</dd>
     </dl>
   </aside>
@@ -140,8 +140,9 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
 <section style="padding-top:0"><div class="wrap">
   <p class="eyebrow">Come funziona un percorso</p>
-  <h2>Quattro tappe, dalla prima visita al mantenimento.</h2>
+  <h2>Cinque tappe, dalla chiamata conoscitiva all’autonomia.</h2>
   <div class="timeline">
+    <div class="step"><span class="when">Prima di iniziare</span><b>Chiamata conoscitiva</b><p class="muted small">15 minuti al telefono o in video, inclusi e senza impegno: capiamo insieme se sono la professionista adatta alle tue esigenze.</p></div>
     <div class="step"><span class="when">Settimana 1</span><b>Prima visita</b><p class="muted small">Storia clinica e abitudini, misure, obiettivi realistici. In studio o online, circa 60 minuti.</p></div>
     <div class="step"><span class="when">Entro 7 giorni</span><b>Il tuo piano</b><p class="muted small">Piano alimentare, lista della spesa e indicazioni pratiche, inviati per email.</p></div>
     <div class="step"><span class="when">Ogni 3–5 settimane</span><b>Controlli</b><p class="muted small">Incontri online di circa 30 minuti per verificare, correggere e adattare il piano.</p></div>
@@ -156,13 +157,13 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     <article class="plan">
       <h3>Avvio · 3 mesi</h3>
       <div class="price">239 € <small>invece di 272 €</small></div>
-      <ul><li>Prima visita in studio o online</li><li>2 controlli online</li><li>Piano alimentare e lista della spesa</li></ul>
+      <ul><li>Chiamata conoscitiva di 15 minuti</li><li>Prima visita in studio o online</li><li>2 controlli online</li><li>Piano alimentare e lista della spesa</li></ul>
       <p class="muted small">Valido 4 mesi dal primo incontro.</p>
     </article>
     <article class="plan feat">
       <h3>Completo · 6 mesi</h3>
       <div class="price">429 € <small>invece di 497 €</small></div>
-      <ul><li>Prima visita</li><li>5 controlli: 1 in studio e 4 online</li><li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li></ul>
+      <ul><li>Chiamata conoscitiva di 15 minuti</li><li>Prima visita</li><li>5 controlli: 1 in studio e 4 online</li><li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li></ul>
       <p class="muted small">Anche in 2 rate da 219 € (438 € in tutto). Valido 8 mesi.</p>
     </article>
     <article class="plan">
@@ -172,7 +173,7 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
       <p class="muted small">Valido 8 mesi.</p>
     </article>
   </div>
-  <div class="single"><span>Singola prima visita: <b>122 €</b></span><span>Singolo controllo: <b>75 €</b></span><span>Pagamento anticipato tracciabile · fattura per ogni pagamento</span></div>
+  <div class="single"><span>Singola prima visita: <b>122 €</b></span><span>Singolo controllo: <b>75 €</b></span><span>Chiamata conoscitiva: <b>inclusa</b>, senza impegno</span><span>Pagamento anticipato tracciabile · fattura per ogni pagamento</span></div>
 </div></section>
 
 <section><div class="wrap">
@@ -189,7 +190,7 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   <p class="eyebrow">Studio e online</p>
   <h2>Dove ci vediamo</h2>
   <div class="where">
-    <div class="tile"><h3>In studio</h3><p class="muted small">Colognola ai Colli (Verona), <span class="todo">[indirizzo]</span>. Una giornata al mese, di sabato, su prenotazione: le date sono indicate al momento della richiesta.</p></div>
+    <div class="tile"><h3>In studio</h3><p class="muted small">Via Stra 67, Colognola ai Colli (Verona). Una giornata al mese, di sabato, su prenotazione: le date sono indicate al momento della richiesta.</p></div>
     <div class="tile"><h3>Online</h3><p class="muted small">Videochiamata su piattaforma sicura, anche nel tardo pomeriggio e la sera. Basta una connessione stabile e una bilancia pesapersone.</p></div>
   </div>
 </div></section>
@@ -198,6 +199,7 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   <p class="eyebrow">Domande frequenti</p>
   <h2>Prima di prenotare</h2>
   <div style="margin-top:18px">
+    <details><summary>Cos’è la chiamata conoscitiva?</summary><p>Una telefonata o videochiamata di circa 15 minuti, inclusa e senza impegno, prima di iniziare. Mi racconti cosa ti serve, ti spiego come lavoro e capiamo insieme se il percorso fa per te. Non è una visita: non vengono dati consigli personalizzati.</p></details>
     <details><summary>Posso spostare un appuntamento?</summary><p>Sì, gratuitamente fino a 24 ore prima. Un incontro saltato senza preavviso si considera svolto.</p></details>
     <details><summary>Il percorso è rimborsabile?</summary><p>I percorsi sono pagati in anticipo e non sono rimborsabili, ma gli incontri si possono spostare con 24 ore di preavviso entro il periodo di validità. Le condizioni complete sono nel preventivo che firmi prima di iniziare.</p></details>
     <details><summary>La visita è detraibile?</summary><p>Ricevi sempre la fattura con pagamento tracciabile. Per la detraibilità nella dichiarazione dei redditi verifica i requisiti con il tuo CAF o commercialista.</p></details>
@@ -209,46 +211,54 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
 <section id="prenota" style="padding-top:0"><div class="wrap" style="max-width:820px">
   <p class="eyebrow">Prenota</p>
-  <h2>Richiedi un appuntamento</h2>
-  <p class="muted" style="margin-top:10px">Compila la richiesta: ti rispondo entro 24 ore con le date disponibili, il preventivo e il link per il pagamento.</p>
+  <h2>Richiedi un preventivo o una chiamata conoscitiva</h2>
+  <p class="muted" style="margin-top:10px">Compila la richiesta: ti rispondo entro 24 ore con le date disponibili per la chiamata conoscitiva e il preventivo del percorso. Dopo l’invio trovi anche il mio numero di telefono.</p>
   <form id="book" novalidate>
     <label for="f-name">Nome e cognome<input id="f-name" name="nome" autocomplete="name" required></label>
     <label for="f-contact">Email o telefono<input id="f-contact" name="contatto" autocomplete="email" required></label>
-    <label for="f-plan">Percorso<select id="f-plan" name="percorso"><option>Avvio · 3 mesi</option><option selected>Completo · 6 mesi</option><option>Mantenimento · 6 mesi</option><option>Prima visita singola</option><option>Non so ancora</option></select></label>
+    <label for="f-plan">Richiesta<select id="f-plan" name="percorso"><option selected>Chiamata conoscitiva (inclusa)</option><option>Preventivo percorso Avvio · 3 mesi</option><option>Preventivo percorso Completo · 6 mesi</option><option>Preventivo Mantenimento · 6 mesi</option><option>Prima visita singola</option><option>Non so ancora</option></select></label>
     <label for="f-where">Modalità<select id="f-where" name="modalita"><option>Online</option><option>In studio (Colognola ai Colli)</option><option>Indifferente</option></select></label>
     <label class="full" for="f-msg">Disponibilità e note (facoltative)<textarea id="f-msg" name="note" rows="3" placeholder="Giorni e orari in cui sei disponibile. Non inserire qui dati sulla salute: li raccogliamo alla visita."></textarea></label>
     <label class="check full" for="f-privacy"><input type="checkbox" id="f-privacy" required> Ho letto l’informativa sulla privacy e acconsento a essere ricontattata/o per questa richiesta.</label>
-    <div class="full"><button class="btn" type="submit">Invia la richiesta</button></div>
+    <input type="text" name="_honey" id="f-hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px" aria-hidden="true">
+    <div class="full"><button class="btn" type="submit" id="f-send">Invia la richiesta</button></div>
   </form>
   <div id="out" class="out" hidden style="margin-top:16px">
-    <b>Anteprima del sito: in questa bozza la richiesta non viene inviata.</b>
-    <p class="small">Nel sito pubblicato il modulo arriverà direttamente alla tua email. Intanto puoi copiare il testo:</p>
-    <pre id="out-text"></pre>
-    <div><button class="btn ghost" type="button" id="copy">Copia il testo</button></div>
+    <b>Grazie, richiesta ricevuta.</b>
+    <p class="small">Ti rispondo entro 24 ore all’indirizzo o al numero che hai indicato.</p>
+    <p id="phone-line" class="small"></p>
   </div>
-  <p id="err" class="small" style="color:var(--wine);margin-top:8px" hidden>Compila nome, contatto e la casella della privacy.</p>
-  <p class="small muted" style="margin-top:16px">Contatti diretti: <span class="todo">[email]</span> · <span class="todo">[telefono]</span></p>
+  <div id="fail" class="out" hidden style="margin-top:16px;background:var(--wine-soft)">
+    <b>La richiesta non è partita.</b>
+    <p class="small">Controlla la connessione e riprova, oppure scrivimi a dott.ssavb@gmail.com.</p>
+  </div>
+  <p class="small muted" style="margin-top:16px">Email: dott.ssavb@gmail.com · Il numero di telefono compare dopo l’invio della richiesta.</p>
 </div></section>
 </main>
 
 <footer><div class="wrap cols">
-  <div><b style="color:var(--ink)">Valentina Burati · Dietista</b><br>Ordine TSRM e PSTRP di <span class="todo">[provincia]</span>, iscrizione n. <span class="todo">[numero]</span><br>P.IVA <span class="todo">[partita IVA]</span></div>
-  <div>Studio: Colognola ai Colli (VR), <span class="todo">[indirizzo]</span><br>Visite online in tutta Italia</div>
+  <div><b style="color:var(--ink)">Valentina Burati · Dietista</b><br>Ordine TSRM e PSTRP di Verona, iscrizione n. 0051<br>P.IVA <span class="todo">[partita IVA]</span></div>
+  <div>Studio: Via Stra 67, Colognola ai Colli (VR)<br>Visite online in tutta Italia</div>
   <div>Le informazioni di questo sito hanno carattere informativo e non sostituiscono una visita.<br><a href="#privacy">Privacy</a> · <a href="#privacy">Cookie</a></div>
 </div>
-<div class="wrap" id="privacy" style="margin-top:20px"><details><summary>Informativa privacy (bozza da completare e far verificare)</summary><p>Titolare del trattamento: Valentina Burati, <span class="todo">[indirizzo, email]</span>. I dati inviati con il modulo (nome, contatti, preferenze) sono usati solo per rispondere alla richiesta di appuntamento e conservati per il tempo necessario. I dati sanitari sono raccolti solo durante la visita, per finalità di cura, e conservati secondo gli obblighi di legge. Puoi chiedere in ogni momento accesso, rettifica o cancellazione scrivendo a <span class="todo">[email]</span>. Il sito non usa cookie di profilazione. Testo da far verificare da un consulente prima della pubblicazione.</p></details></div>
+<div class="wrap" id="privacy" style="margin-top:20px"><details><summary>Informativa privacy (bozza da completare e far verificare)</summary><p>Titolare del trattamento: Valentina Burati, Via Stra 67, Colognola ai Colli (VR), dott.ssavb@gmail.com. I dati inviati con il modulo (nome, contatti, preferenze) sono usati solo per rispondere alla richiesta di appuntamento e conservati per il tempo necessario. I dati sanitari sono raccolti solo durante la visita, per finalità di cura, e conservati secondo gli obblighi di legge. Puoi chiedere in ogni momento accesso, rettifica o cancellazione scrivendo a dott.ssavb@gmail.com. Le richieste inviate dal modulo transitano tramite il servizio FormSubmit, che le inoltra alla mia email. Il sito non usa cookie di profilazione. Testo da far verificare da un consulente prima della pubblicazione.</p></details></div>
 </footer>
 
 <script>
 (function(){
-  var f=document.getElementById("book"),out=document.getElementById("out"),txt=document.getElementById("out-text"),err=document.getElementById("err");
+  /* Numero di telefono mostrato solo dopo l'invio del modulo (codificato per ridurre la raccolta automatica). */
+  var PH="";
+  var f=document.getElementById("book"),out=document.getElementById("out"),fail=document.getElementById("fail"),err=document.getElementById("err"),send=document.getElementById("f-send");
   f.addEventListener("submit",function(e){e.preventDefault();
     var n=document.getElementById("f-name").value.trim(),c=document.getElementById("f-contact").value.trim(),p=document.getElementById("f-privacy").checked;
-    if(!n||!c||!p){err.hidden=false;return}err.hidden=true;
-    txt.textContent="Richiesta di appuntamento\nNome: "+n+"\nContatto: "+c+"\nPercorso: "+document.getElementById("f-plan").value+"\nModalità: "+document.getElementById("f-where").value+"\nNote: "+(document.getElementById("f-msg").value.trim()||"—");
-    out.hidden=false;out.scrollIntoView({block:"nearest"});});
-  document.getElementById("copy").addEventListener("click",function(){var b=this;try{navigator.clipboard.writeText(txt.textContent).then(function(){b.textContent="Copiato"},function(){sel()})}catch(e){sel()}
-    function sel(){var r=document.createRange();r.selectNodeContents(txt);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Testo selezionato"}});
+    if(!n||!c||!p){err.hidden=false;return}err.hidden=true;fail.hidden=true;
+    if(document.getElementById("f-hp").value)return;
+    send.disabled=true;send.textContent="Invio in corso…";
+    var data={nome:n,contatto:c,richiesta:document.getElementById("f-plan").value,modalita:document.getElementById("f-where").value,note:document.getElementById("f-msg").value.trim()||"—",_subject:"Nuova richiesta dal sito: "+document.getElementById("f-plan").value,_template:"table",_captcha:"false"};
+    fetch("https://formsubmit.co/ajax/dott.ssavb@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
+      .then(function(r){if(!r.ok)throw new Error("http");return r.json()})
+      .then(function(){f.hidden=true;out.hidden=false;var num=PH?atob(PH):"";document.getElementById("phone-line").textContent=num?"Se preferisci, puoi chiamarmi al "+num+".":"";out.scrollIntoView({block:"nearest"})})
+      .catch(function(){fail.hidden=false;send.disabled=false;send.textContent="Invia la richiesta"});});
 })();
 </script>
 
