@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Valentina Burati Dietista</title>
-<meta name="description" content="Valentina Burati, dietista iscritta all’Albo. Percorsi nutrizionali di 3 e 6 mesi, in studio a Colognola ai Colli (VR) e online in tutta Italia.">
+<meta name="description" content="Valentina Burati, dietista iscritta all’Albo. Percorso nutrizionale di 3 mesi, in studio a Colognola ai Colli (VR) e consulenze da remoto in tutta Italia.">
 <style>
 /* Layout: colonna editoriale stretta, una fascia blu notte per i percorsi, percorso del paziente come linea del tempo reale */
 :root{
@@ -89,9 +89,13 @@ input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);bo
 footer{border-top:1px solid var(--line);padding-block:32px;font-size:.88rem;color:var(--muted)}
 footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .todo{background:var(--wine-soft);color:var(--wine);border-radius:4px;padding:0 4px;font-weight:600}
-@media (max-width:820px){.hero,.two,.where{grid-template-columns:1fr}.plans,.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}footer .cols{grid-template-columns:1fr}}
+@media (max-width:820px){.hero,.two,.where{grid-template-columns:1fr}.plans,.plans2,.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}footer .cols{grid-template-columns:1fr}}
 @media (max-width:520px){.timeline{grid-template-columns:1fr}form{grid-template-columns:1fr}nav.menu{gap:12px}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.plans2{grid-template-columns:1fr 1fr}
+.plan.behind{background:transparent;border:1px solid color-mix(in srgb,currentColor 30%,transparent)}
+.plan.behind li{margin-bottom:6px}
+.band a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -99,15 +103,15 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
 <header class="top"><div class="wrap">
   <a class="brand" href="#inizio">Valentina Burati<span>Dietista</span></a>
-  <nav class="menu" aria-label="Menu principale"><a href="#chi-sono">Chi sono</a><a href="#percorsi">Percorsi e prezzi</a><a href="#dove">Studio e online</a><a href="#domande">Domande</a><a href="#prenota">Prenota</a></nav>
+  <nav class="menu" aria-label="Menu principale"><a href="#chi-sono">Chi sono</a><a href="#percorsi">Percorsi e prezzi</a><a href="#dove">Studio e da remoto</a><a href="#domande">Domande</a><a href="#prenota">Prenota</a></nav>
 </div></header>
 
 <main id="inizio">
 <section><div class="wrap hero">
   <div>
-    <p class="eyebrow">Dietista iscritta all’Albo · in studio e online</p>
+    <p class="eyebrow">Dietista iscritta all’Albo · in studio e da remoto</p>
     <h1>Un percorso alimentare costruito sulla tua vita, con controlli regolari.</h1>
-    <p class="lead">Percorsi di 3 e 6 mesi per adulti e ragazzi: piano alimentare, lista della spesa e incontri programmati, in studio a Colognola ai Colli (Verona) oppure online. Si comincia con una breve chiamata conoscitiva, inclusa e senza impegno.</p>
+    <p class="lead">Un percorso di 3 mesi per adulti e ragazzi: piano alimentare, lista della spesa e incontri programmati, in studio a Colognola ai Colli (Verona) oppure con consulenze da remoto in tutta Italia. Si comincia con una breve chiamata conoscitiva, inclusa e senza impegno.</p>
     <div class="ctas"><a class="btn" href="#prenota">Prenota una chiamata conoscitiva</a><a class="btn ghost" href="#percorsi">Vedi i percorsi</a></div>
   </div>
   <aside class="card-id" aria-label="Dati professionali">
@@ -117,7 +121,8 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
       <dt>Albo</dt><dd>Ordine TSRM e PSTRP di Verona, n. 0051</dd>
       <dt>Formazione</dt><dd>Laurea in Dietistica · studentessa di Medicina e Chirurgia (Università di Bologna)</dd>
       <dt>Studio</dt><dd>Via Stra 67, Colognola ai Colli (VR)</dd>
-      <dt>Online</dt><dd>In tutta Italia</dd>
+      <dt>Da remoto</dt><dd>Consulenze in tutta Italia</dd>
+      <dt>Esperienza</dt><dd>Clienti internazionali con BetterMe · progetto pilota all’Azienda Ospedaliera Universitaria di Padova</dd>
     </dl>
   </aside>
 </div></section>
@@ -127,6 +132,8 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     <p class="eyebrow">Chi sono</p>
     <h2>Dietista, con una formazione in corso anche in Medicina.</h2>
     <p class="muted">Sono Valentina Burati, dietista iscritta all’Albo. Sto completando gli studi in Medicina e Chirurgia all’Università di Bologna: non sono medico e non faccio diagnosi né prescrivo farmaci. Questa formazione mi aiuta a comprendere la documentazione clinica che mi porti e a collaborare con il tuo medico.</p>
+    <p class="muted">Da diversi anni seguo clienti internazionali, anche in inglese, con BetterMe, piattaforma internazionale di fitness e benessere con milioni di download: un lavoro che mi ha insegnato a costruire piani per abitudini, culture e orari molto diversi.</p>
+    <p class="muted">Per la tesi ho condotto un progetto pilota tra i dipendenti dell’Azienda Ospedaliera Universitaria di Padova, con oltre 400 colloqui motivazionali. I risultati sono stati pubblicati su <i>Intervista Internazionale</i><span class="todo">[link alla pubblicazione]</span>. Il colloquio motivazionale è un metodo per aiutare la persona a trovare le proprie ragioni di cambiamento: lo uso in ogni incontro.</p>
   </div>
   <div class="reasons">
     <div class="reason"><h3>Un percorso, non un foglio</h3><p class="muted">Prima visita e controlli sono già in calendario: sai dall’inizio cosa succede ogni mese e non resti solo dopo il primo incontro.</p></div>
@@ -141,34 +148,28 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   <h2>Cinque tappe, dalla chiamata conoscitiva all’autonomia.</h2>
   <div class="timeline">
     <div class="step"><span class="when">Prima di iniziare</span><b>Chiamata conoscitiva</b><p class="muted small">15 minuti al telefono o in video, inclusi e senza impegno: capiamo insieme se sono la professionista adatta alle tue esigenze.</p></div>
-    <div class="step"><span class="when">Settimana 1</span><b>Prima visita</b><p class="muted small">Storia clinica e abitudini, misure, obiettivi realistici. In studio o online, circa 60 minuti.</p></div>
+    <div class="step"><span class="when">Settimana 1</span><b>Prima visita</b><p class="muted small">Storia clinica e abitudini, misure, obiettivi realistici. In studio o da remoto, circa 60 minuti.</p></div>
     <div class="step"><span class="when">Entro 7 giorni</span><b>Il tuo piano</b><p class="muted small">Piano alimentare, lista della spesa e indicazioni pratiche, inviati per email.</p></div>
-    <div class="step"><span class="when">Ogni 3–5 settimane</span><b>Controlli</b><p class="muted small">Incontri online di circa 30 minuti per verificare, correggere e adattare il piano.</p></div>
+    <div class="step"><span class="when">Ogni 3–5 settimane</span><b>Controlli</b><p class="muted small">Consulenze da remoto di circa 30 minuti per verificare, correggere e adattare il piano.</p></div>
     <div class="step"><span class="when">Fine percorso</span><b>Autonomia</b><p class="muted small">Strumenti per proseguire da sola o da solo, con il mantenimento se lo desideri.</p></div>
   </div>
 </div></section>
 
 <section id="percorsi" class="band"><div class="wrap">
   <p class="eyebrow">Percorsi e prezzi</p>
-  <h2>Percorsi a prezzo fisso, con pagamento anticipato.</h2>
-  <div class="plans">
-    <article class="plan">
-      <h3>Avvio · 3 mesi</h3>
-      <div class="price">239 €</div>
-      <ul><li>Chiamata conoscitiva di 15 minuti</li><li>Prima visita in studio o online</li><li>2 controlli online</li><li>Piano alimentare e lista della spesa</li></ul>
-      <p class="muted small">Valido 4 mesi dal primo incontro.</p>
-    </article>
+  <h2>Un percorso a prezzo fisso, con pagamento anticipato.</h2>
+  <div class="plans plans2">
     <article class="plan feat">
-      <h3>Completo · 6 mesi</h3>
-      <div class="price">429 €</div>
-      <ul><li>Chiamata conoscitiva di 15 minuti</li><li>Prima visita</li><li>5 controlli: 1 in studio e 4 online</li><li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li></ul>
-      <p class="muted small">Anche in 2 rate da 219 € (438 € in tutto). Valido 8 mesi.</p>
+      <h3>Percorso nutrizionale · 3 mesi</h3>
+      <div class="price">225 €</div>
+      <ul><li>Chiamata conoscitiva di 15 minuti</li><li>Prima visita in studio o da remoto (circa 60 minuti)</li><li>Piano alimentare personalizzato, lista della spesa e indicazioni pratiche</li><li>2 controlli da remoto (circa 30 minuti), con aggiornamento del piano</li><li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li></ul>
+      <p class="muted small">Pagamento anticipato. Valido 4 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
     </article>
-    <article class="plan">
-      <h3>Mantenimento · 6 mesi</h3>
-      <div class="price">199 €</div>
-      <ul><li>3 controlli online</li><li>Per chi ha già concluso un percorso</li></ul>
-      <p class="muted small">Valido 8 mesi.</p>
+    <article class="plan behind">
+      <h3>Cosa c’è dietro un percorso</h3>
+      <p class="muted small">La visita è solo la parte che vedi. Per ogni persona il lavoro comprende:</p>
+      <ul><li><b>Prima della visita:</b> lettura del questionario, degli esami e delle terapie che mi invii.</li><li><b>Dopo la visita:</b> calcolo dei fabbisogni sui LARN (Livelli di assunzione di riferimento di nutrienti ed energia, SINU 2024), costruzione del piano su gusti, orari e budget, lista della spesa e ricette: in media 2–3 ore di lavoro.</li><li><b>A ogni controllo:</b> confronto dei dati, correzione del piano e nuove indicazioni.</li><li><b>Tra un incontro e l’altro:</b> risposte alle domande pratiche e, se lo desideri, raccordo con il tuo medico.</li></ul>
+      <p class="muted small">Per questo il percorso si paga all’inizio: mi permette di riservarti tempo, date e lavoro per tutti e tre i mesi.</p>
     </article>
   </div>
   <div class="single"><span>Singola prima visita: <b>122 €</b></span><span>Singolo controllo: <b>75 €</b></span><span>Chiamata conoscitiva: <b>inclusa</b>, senza impegno</span><span>Pagamento anticipato tracciabile · fattura per ogni pagamento</span><span>Prezzi esenti IVA (prestazioni sanitarie)</span></div>
@@ -186,11 +187,11 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 </div></section>
 
 <section id="dove" style="padding-top:0"><div class="wrap">
-  <p class="eyebrow">Studio e online</p>
+  <p class="eyebrow">Studio e da remoto</p>
   <h2>Dove ci vediamo</h2>
   <div class="where">
     <div class="tile"><h3>In studio</h3><p class="muted small">Via Stra 67, Colognola ai Colli (Verona). Una giornata al mese, di sabato, su prenotazione: le date sono indicate al momento della richiesta.</p></div>
-    <div class="tile"><h3>Online</h3><p class="muted small">Videochiamata su piattaforma sicura, anche nel tardo pomeriggio e la sera. Basta una connessione stabile e una bilancia pesapersone.</p></div>
+    <div class="tile"><h3>Consulenze da remoto</h3><p class="muted small">In tutta Italia, in videochiamata su Zoom, anche nel tardo pomeriggio e la sera. Basta una connessione stabile e una bilancia pesapersone.</p></div>
   </div>
 </div></section>
 
@@ -200,10 +201,10 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   <div style="margin-top:18px">
     <details><summary>Cos’è la chiamata conoscitiva?</summary><p>Una telefonata o videochiamata di circa 15 minuti, inclusa e senza impegno, prima di iniziare. Mi racconti cosa ti serve, ti spiego come lavoro e capiamo insieme se il percorso fa per te. Non è una visita: non vengono dati consigli personalizzati.</p></details>
     <details><summary>Posso spostare un appuntamento?</summary><p>Sì, gratuitamente fino a 24 ore prima. Un incontro saltato senza preavviso si considera svolto.</p></details>
-    <details><summary>Il percorso è rimborsabile?</summary><p>Il percorso ha un prezzo fisso, inferiore alla somma delle visite singole. Se decidi di interromperlo, ti rimborso la parte non usufruita, calcolando gli incontri già svolti al prezzo delle visite singole (122 € la prima visita, 75 € ogni controllo). Gli incontri si possono spostare gratuitamente con 24 ore di preavviso entro il periodo di validità. Le condizioni complete sono <a href="condizioni.html">in questa pagina</a> e nel preventivo che firmi prima di iniziare.</p></details>
+    <details><summary>Il percorso è rimborsabile?</summary><p>Le prestazioni già svolte non sono rimborsabili: la prima visita con l’elaborazione del piano, i controlli fatti e quelli saltati senza 24 ore di preavviso, e quelli non fissati entro i 4 mesi di validità. Il percorso costa 225 € invece dei 272 € delle visite singole perché è un impegno di tre mesi: se lo interrompi, gli incontri svolti si contano al prezzo singolo (122 € la prima visita, 75 € ogni controllo) e ti rimborso solo la differenza. Per esempio, dopo la sola prima visita ti restituisco 103 €; dopo la prima visita e un controllo, 28 €; dopo il secondo controllo il percorso è concluso. Tutto è scritto nelle <a href="condizioni.html">condizioni</a> che firmi prima di iniziare.</p></details>
     <details><summary>La visita è detraibile?</summary><p>Ricevi sempre la fattura con pagamento tracciabile. Per la detraibilità nella dichiarazione dei redditi verifica i requisiti con il tuo CAF o commercialista.</p></details>
     <details><summary>Cosa devo portare alla prima visita?</summary><p>Esami del sangue recenti, eventuali referti e terapie in corso, e se vuoi un diario di 3 giorni di ciò che mangi. Prima dell’incontro ricevi un breve questionario.</p></details>
-    <details><summary>Come funzionano le visite online?</summary><p>Ricevi un link per la videochiamata e il <a href="consenso.html">modulo di consenso informato</a>, che comprende la televisita. Il piano e i materiali arrivano per email.</p></details>
+    <details><summary>Come funzionano le consulenze da remoto?</summary><p>Ricevi un link Zoom per la videochiamata e il <a href="consenso.html">modulo di consenso informato</a>, che comprende la televisita. Il piano e i materiali arrivano per email.</p></details>
     <details><summary>Ho una patologia: posso rivolgermi a te?</summary><p>Sì, sulla base della diagnosi del medico. Ti chiederò la documentazione clinica e, se lo desideri, mi coordinerò con il tuo medico curante.</p></details>
   </div>
 </div></section>
@@ -215,8 +216,8 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   <form id="book" novalidate>
     <label for="f-name">Nome e cognome<input id="f-name" name="nome" autocomplete="name" required></label>
     <label for="f-contact">Email o telefono<input id="f-contact" name="contatto" autocomplete="email" required></label>
-    <label for="f-plan">Richiesta<select id="f-plan" name="percorso"><option selected>Chiamata conoscitiva (inclusa)</option><option>Preventivo percorso Avvio · 3 mesi</option><option>Preventivo percorso Completo · 6 mesi</option><option>Preventivo Mantenimento · 6 mesi</option><option>Prima visita singola</option><option>Non so ancora</option></select></label>
-    <label for="f-where">Modalità<select id="f-where" name="modalita"><option>Online</option><option>In studio (Colognola ai Colli)</option><option>Indifferente</option></select></label>
+    <label for="f-plan">Richiesta<select id="f-plan" name="percorso"><option selected>Chiamata conoscitiva (inclusa)</option><option>Preventivo percorso nutrizionale · 3 mesi</option><option>Prima visita singola</option><option>Non so ancora</option></select></label>
+    <label for="f-where">Modalità<select id="f-where" name="modalita"><option>Da remoto (Zoom)</option><option>In studio (Colognola ai Colli)</option><option>Indifferente</option></select></label>
     <label class="full" for="f-msg">Disponibilità e note (facoltative)<textarea id="f-msg" name="note" rows="3" placeholder="Giorni e orari in cui sei disponibile. Non inserire qui dati sulla salute: li raccogliamo alla visita."></textarea></label>
     <label class="check full" for="f-privacy"><input type="checkbox" id="f-privacy" required> Ho letto l’<a href="privacy.html" target="_blank" rel="noopener">informativa sulla privacy</a>.</label>
     <input type="text" name="_honey" id="f-hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px" aria-hidden="true">
@@ -236,8 +237,8 @@ footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 </main>
 
 <footer><div class="wrap cols">
-  <div><b style="color:var(--ink)">Valentina Burati · Dietista</b><br>Ordine TSRM e PSTRP di Verona, iscrizione n. 0051<br>P.IVA <span class="todo">[partita IVA]</span><br>PEC <span class="todo">[indirizzo PEC]</span></div>
-  <div>Studio: Via Stra 67, Colognola ai Colli (VR)<br>Visite online in tutta Italia</div>
+  <div><b style="color:var(--ink)">Valentina Burati · Dietista</b><br>Ordine TSRM e PSTRP di Verona, iscrizione n. 0051<br>P.IVA 04795610239<br>PEC <a href="mailto:valentina.burati@pec.tsrm-pstrp.org">valentina.burati@pec.tsrm-pstrp.org</a></div>
+  <div>Studio: Via Stra 67, Colognola ai Colli (VR)<br>Consulenze da remoto in tutta Italia</div>
   <div>Le informazioni di questo sito hanno carattere informativo e non sostituiscono una visita.<br><a href="privacy.html">Privacy e cookie</a> · <a href="condizioni.html">Condizioni del percorso</a> · <a href="consenso.html">Consenso informato</a></div>
 </div>
 </footer>
