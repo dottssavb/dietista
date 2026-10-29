@@ -367,8 +367,9 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     <p id="phone-line" class="small"></p>
   </div>
   <div id="fail" class="msg ko" hidden role="alert">
-    <b>La richiesta non è partita.</b>
-    <p class="small">Controlla la connessione e riprova, oppure scrivimi a dott.ssavb@gmail.com.</p>
+    <b>La richiesta non è partita dal sito.</b>
+    <p class="small" id="fail-why">Puoi inviarla subito via email: il messaggio è già compilato con i dati che hai inserito.</p>
+    <p><a class="btn" id="mailto" href="mailto:dott.ssavb@gmail.com">Invia la richiesta via email</a></p>
   </div>
   </div>
   <p class="small muted contact-line">Preferisci l’email? Scrivi a <a href="mailto:dott.ssavb@gmail.com">dott.ssavb@gmail.com</a>. Il numero di telefono compare dopo l’invio della richiesta.</p>
@@ -395,9 +396,12 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     send.disabled=true;send.textContent="Invio in corso…";
     var data={nome:n,contatto:c,richiesta:document.getElementById("f-plan").value,modalita:document.getElementById("f-where").value,note:document.getElementById("f-msg").value.trim()||"—",_subject:"Nuova richiesta dal sito: "+document.getElementById("f-plan").value,_template:"table",_captcha:"false"};
     fetch("https://formsubmit.co/ajax/dott.ssavb@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
-      .then(function(r){if(!r.ok)throw new Error("http");return r.json()})
+      .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||String(j.success)==="false")throw new Error(j.message||"http");return j})})
       .then(function(){f.hidden=true;out.hidden=false;var num=PH?atob(PH):"";document.getElementById("phone-line").textContent=num?"Se preferisci, puoi chiamarmi al "+num+".":"";out.scrollIntoView({block:"nearest"})})
-      .catch(function(){fail.hidden=false;send.disabled=false;send.textContent="Invia la richiesta"});});
+      .catch(function(e){var body="Nome: "+n+"\nRecapito: "+c+"\nRichiesta: "+data.richiesta+"\nModalità: "+data.modalita+"\nNote: "+data.note+"\n\nHo letto l'informativa sulla privacy.";
+        document.getElementById("mailto").href="mailto:dott.ssavb@gmail.com?subject="+encodeURIComponent(data._subject)+"&body="+encodeURIComponent(body);
+        if(window.console)console.warn("Invio modulo non riuscito:",e&&e.message);
+        fail.hidden=false;send.disabled=false;send.textContent="Invia la richiesta";fail.scrollIntoView({block:"nearest"})});});
 })();
 (function(){var b=document.getElementById("ctabar"),hero=document.querySelector(".hero .ctas"),form=document.getElementById("prenota");if(!b||!("IntersectionObserver" in window))return;var past=false,atForm=false;function u(){b.classList.toggle("on",past&&!atForm)}new IntersectionObserver(function(e){past=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;u()}).observe(hero);new IntersectionObserver(function(e){atForm=e[0].isIntersecting;u()}).observe(form)})();
 </script>
