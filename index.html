@@ -12,19 +12,19 @@
 @font-face{font-family:"Lora";src:url("fonts/lora.woff") format("woff");font-weight:400 700;font-style:normal;font-display:swap}
 @font-face{font-family:"Lora";src:url("fonts/lora-italic.woff") format("woff");font-weight:400 700;font-style:italic;font-display:swap}
 :root{
-  --paper:#F5F6F2; --surface:#FFFFFF; --ink:#1C2220; --muted:#59625E; --line:#D8DDD6;
-  --radicchio:#7B1E3F; --radicchio-deep:#481226; --vena:#F2E5EA; --foglia:#56744F;
-  --on-deep:#F7EEF1; --on-deep-muted:#D9BFC9; --deep-line:rgba(247,238,241,.22);
+  --paper:#FFFFFF; --alt:#F3F6FB; --surface:#FFFFFF; --ink:#172440; --muted:#55607A; --line:#DEE4EE;
+  --blu:#1E3A6E; --blu-deep:#17305C; --radicchio:#8A1F45; --radicchio-deep:#6B1535; --vena:#F7E9EF; --foglia:#56744F;
+  --on-deep:#F4F7FC; --on-deep-muted:#BFCBE2; --deep-line:rgba(244,247,252,.24); --rosa:#F2B8CC;
   --serif:"Lora","Iowan Old Style","Palatino Linotype",Georgia,serif;
   --ui:system-ui,-apple-system,"Segoe UI",sans-serif;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#131715;--surface:#1A1F1C;--ink:#E8ECE7;--muted:#A2ABA6;--line:#2B322E;--radicchio:#E39AB3;--radicchio-deep:#2C0E19;--vena:#2A1A21;--foglia:#9DBB96;--on-deep:#F3E9EC;--on-deep-muted:#C9AEB9;color-scheme:dark}}
-:root[data-theme="dark"]{--paper:#131715;--surface:#1A1F1C;--ink:#E8ECE7;--muted:#A2ABA6;--line:#2B322E;--radicchio:#E39AB3;--radicchio-deep:#2C0E19;--vena:#2A1A21;--foglia:#9DBB96;--on-deep:#F3E9EC;--on-deep-muted:#C9AEB9;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F1626;--alt:#141D30;--surface:#18223A;--ink:#E9EEF7;--muted:#A7B2C8;--line:#27334D;--blu:#9DB7E6;--blu-deep:#122347;--radicchio:#E79AB6;--radicchio-deep:#F2B8CC;--vena:#2B1A27;--foglia:#9DBB96;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0F1626;--alt:#141D30;--surface:#18223A;--ink:#E9EEF7;--muted:#A7B2C8;--line:#27334D;--blu:#9DB7E6;--blu-deep:#122347;--radicchio:#E79AB6;--radicchio-deep:#F2B8CC;--vena:#2B1A27;--foglia:#9DBB96;color-scheme:dark}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.65;font-variant-numeric:oldstyle-nums proportional-nums}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-weight:500;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1,h2,h3{color:var(--blu);font-weight:500;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
 h1{font-size:clamp(2.5rem,6.2vw,4.4rem);line-height:1.04;letter-spacing:-.022em}
 h2{font-size:clamp(1.85rem,3.8vw,2.7rem)}
 h3{font-size:1.3rem;font-weight:600;letter-spacing:0}
@@ -55,11 +55,15 @@ nav.menu a{color:var(--ink);text-decoration:none}
 nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 
 /* apertura */
-.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:clamp(32px,6vw,80px);align-items:start;padding-top:clamp(40px,7vw,88px)}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding-top:clamp(40px,7vw,88px)}
 .hero .lead{font-size:1.18rem;color:var(--muted);max-width:33em;margin-top:22px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero .note{margin-top:14px}
-.letterhead{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--radicchio);border-radius:2px 2px 10px 10px;padding:26px 26px 22px;margin-top:8px}
+.plate{margin:0;justify-self:center;width:min(100%,460px)}
+@media (max-width:640px){.plate{width:min(78%,320px)}}
+.plate img{display:block;width:100%;height:auto}
+.alt{background:var(--alt)}
+.letterhead{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--radicchio);border-radius:2px 2px 10px 10px;padding:24px 24px 20px;box-shadow:0 18px 40px -28px rgba(23,48,92,.45)}
 .letterhead .who{font-size:1.45rem;font-weight:600;line-height:1.2}
 .letterhead .role{font-style:italic;color:var(--radicchio);margin-top:2px}
 .letterhead dl{margin:20px 0 0;display:grid;gap:12px}
@@ -71,27 +75,31 @@ nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 .about .text{display:grid;gap:16px;max-width:36rem}
 .about .text h2{margin-bottom:6px}
 .pull{font-size:1.28rem;line-height:1.5;font-style:italic;color:var(--ink);border-left:3px solid var(--radicchio);padding-left:18px}
-.reasons{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;align-self:center}
-.reasons div{border-top:1px solid var(--ink);padding-top:12px}
+.side{display:grid;gap:40px;align-content:start}
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px}
+.reasons div{border-top:2px solid var(--blu);padding-top:12px}
 .reasons h3{font-size:1.12rem;margin-bottom:6px}
 .reasons p{font-size:.95rem;color:var(--muted);line-height:1.55}
 
 /* tappe: è una sequenza reale, quindi numerata */
 .steps{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;counter-reset:s}
 .steps li{counter-increment:s;display:grid;gap:6px;align-content:start}
-.steps li::before{content:counter(s);font-size:2.6rem;line-height:1;color:var(--radicchio);font-weight:400;font-style:italic}
+.steps li::before{content:counter(s);font-size:2.8rem;line-height:1;color:var(--radicchio);font-weight:400;font-style:italic}
 .steps .when{font-size:.84rem;color:var(--muted);font-style:italic}
 .steps b{font-size:1.12rem;font-weight:600}
 .steps p{font-size:.92rem;color:var(--muted);line-height:1.5}
 
 /* percorsi: fascia radicchio */
-.band{background:var(--radicchio-deep);color:var(--on-deep)}
+.band{background:var(--blu-deep);color:var(--on-deep);position:relative}
+.band::before{content:"";position:absolute;left:0;right:0;top:0;height:22px;background:url("img/bordo.svg") repeat-x center/40px 22px;opacity:.55}
 .band .intro,.band .muted{color:var(--on-deep-muted)}
+.band h2,.band h3{color:#fff}
 .band a{color:var(--on-deep)}
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);margin-top:44px}
 .plan{display:grid;gap:16px;align-content:start;min-width:0}
 .plan h3{font-size:1.5rem;font-weight:500}
 .price{font-size:clamp(2.8rem,6vw,3.6rem);line-height:1;font-weight:500;letter-spacing:-.02em;font-variant-numeric:lining-nums}
+.price{color:#fff}
 .price small{font-size:1rem;font-weight:400;color:var(--on-deep-muted);letter-spacing:0;margin-left:6px}
 .plan ul{margin:0;padding-left:1.1em;display:grid;gap:5px;font-size:.98rem}
 .plan ul li::marker{color:var(--on-deep-muted)}
@@ -100,13 +108,13 @@ nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 .cal{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);position:relative}
 .cal::before{content:"";position:absolute;left:0;right:0;top:11px;border-top:1px dashed var(--deep-line)}
 .cal li{position:relative;display:grid;gap:6px;justify-items:start;font-size:.8rem;color:var(--on-deep-muted);font-family:var(--ui)}
-.cal .dot{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--on-deep);background:var(--radicchio-deep);position:relative;z-index:1}
-.cal .first .dot{background:var(--on-deep)}
+.cal .dot{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--on-deep);background:var(--blu-deep);position:relative;z-index:1}
+.cal .first .dot{background:var(--rosa);border-color:var(--rosa)}
 .cal .free .dot{border-style:dotted;opacity:.6}
 .legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.8rem;color:var(--on-deep-muted);font-family:var(--ui);margin-top:26px}
 .legend span{display:inline-flex;align-items:center;gap:7px}
 .legend i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--on-deep);display:inline-block}
-.legend i.f{background:var(--on-deep)}
+.legend i.f{background:var(--rosa);border-color:var(--rosa)}
 .behind{margin-top:56px;padding-top:28px;border-top:1px solid var(--deep-line);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,5vw,64px)}
 .behind h3{font-size:1.6rem;font-weight:500}
 .behind dl{margin:0;display:grid;gap:14px}
@@ -117,7 +125,7 @@ nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 
 /* per chi, dove */
 .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:36px}
-.cols3 div,.where div{border-top:1px solid var(--line);padding-top:14px}
+.cols3 div,.where div{border-top:2px solid var(--blu);padding-top:14px}
 .cols3 h3,.where h3{margin-bottom:6px}
 .cols3 p,.where p{color:var(--muted);font-size:.98rem}
 .where{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px}
@@ -172,16 +180,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     <div class="ctas"><a class="btn" href="#prenota">Prenota la chiamata conoscitiva</a><a class="btn quiet" href="#percorsi">Vedi i percorsi</a></div>
     <p class="note small muted">La chiamata conoscitiva dura 15 minuti, è inclusa e senza impegno.</p>
   </div>
-  <aside class="letterhead" aria-label="Dati professionali">
-    <p class="who">Valentina Burati</p>
-    <p class="role">Dietista iscritta all’Albo</p>
-    <dl>
-      <div><dt>Albo</dt><dd>Ordine TSRM e PSTRP di Verona, n. 0051</dd></div>
-      <div><dt>Formazione</dt><dd>Laurea in Dietistica; studentessa di Medicina e Chirurgia all’Università di Bologna</dd></div>
-      <div><dt>Esperienza</dt><dd>Dietista per una piattaforma internazionale di fitness e benessere; progetto pilota all’Azienda Ospedaliera Universitaria di Padova, pubblicato nel 2018</dd></div>
-      <div><dt>Dove</dt><dd>Studio in Via Stra 67, Colognola ai Colli (VR); consulenze da remoto in tutta Italia</dd></div>
-    </dl>
-  </aside>
+  <figure class="plate"><img src="img/piatto.svg" alt="Illustrazione di un piatto in maiolica blu con foglie di radicchio rosso" width="520" height="520"></figure>
 </div></section>
 
 <section id="chi-sono" style="padding-top:0"><div class="wrap about">
@@ -192,15 +191,27 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     <p class="pull">Per la tesi ho condotto un progetto pilota all’Azienda Ospedaliera Universitaria di Padova, con 318 operatori sanitari reclutati e oltre 400 colloqui motivazionali.</p>
     <p class="muted">Lo studio, di cui sono coautrice, è stato pubblicato nel 2018 sulla rivista scientifica <a href="https://doi.org/10.3390/ijerph15092053" rel="noopener"><i>International Journal of Environmental Research and Public Health</i></a>. Il colloquio motivazionale è un metodo che aiuta la persona a trovare le proprie ragioni di cambiamento: lo uso in ogni incontro.</p>
   </div>
+  <div class="side">
+<aside class="letterhead" aria-label="Dati professionali">
+    <p class="who">Valentina Burati</p>
+    <p class="role">Dietista iscritta all’Albo</p>
+    <dl>
+      <div><dt>Albo</dt><dd>Ordine TSRM e PSTRP di Verona, n. 0051</dd></div>
+      <div><dt>Formazione</dt><dd>Laurea in Dietistica; studentessa di Medicina e Chirurgia all’Università di Bologna</dd></div>
+      <div><dt>Esperienza</dt><dd>Dietista per una piattaforma internazionale di fitness e benessere; progetto pilota all’Azienda Ospedaliera Universitaria di Padova, pubblicato nel 2018</dd></div>
+      <div><dt>Dove</dt><dd>Studio in Via Stra 67, Colognola ai Colli (VR); consulenze da remoto in tutta Italia</dd></div>
+    </dl>
+  </aside>
   <div class="reasons">
     <div><h3>Un percorso, non un foglio</h3><p>Prima visita e controlli sono già in calendario: sai dall’inizio cosa succede ogni mese.</p></div>
     <div><h3>Piani che reggono la vita vera</h3><p>Lista della spesa con costi realistici, pasti per chi studia o lavora a turni, ricette semplici.</p></div>
     <div><h3>Collaborazione con il medico</h3><p>In presenza di una patologia lavoro sulla diagnosi e sulle indicazioni del medico curante e, se lo desideri, lo aggiorno.</p></div>
     <div><h3>Chiarezza e rispetto</h3><p>Prezzi scritti prima di iniziare, fattura per ogni pagamento, nessuna promessa miracolosa e nessun giudizio.</p></div>
   </div>
+  </div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section class="alt"><div class="wrap">
   <h2>Come funziona un percorso</h2>
   <ol class="steps">
     <li><span class="when">Prima di iniziare</span><b>Chiamata conoscitiva</b><p>15 minuti al telefono o in video, inclusi e senza impegno, per capire se sono la professionista adatta a te.</p></li>
