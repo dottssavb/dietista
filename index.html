@@ -3,7 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Valentina Burati Dietista</title>
+<title>Dietista a Verona e online – Valentina Burati</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://dottssavb.github.io/dietista/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Valentina Burati, dietista">
+<meta property="og:description" content="Percorsi nutrizionali di 3 e 5 mesi, in studio a Colognola ai Colli (VR) e consulenze da remoto in tutta Italia.">
+<meta property="og:url" content="https://dottssavb.github.io/dietista/">
+<meta property="og:image" content="https://dottssavb.github.io/dietista/img/anteprima.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#17305C">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Valentina Burati, dietista","medicalSpecialty":"DietNutrition","url":"https://dottssavb.github.io/dietista/","email":"dott.ssavb@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Via Stra 67","postalCode":"37030","addressLocality":"Colognola ai Colli","addressRegion":"VR","addressCountry":"IT"},"areaServed":"IT","founder":{"@type":"Person","name":"Valentina Burati","jobTitle":"Dietista","hasCredential":"Iscrizione all'Albo dei Dietisti, Ordine TSRM e PSTRP di Verona n. 0051"},"makesOffer":[{"@type":"Offer","name":"Percorso nutrizionale di 3 mesi","price":"235","priceCurrency":"EUR"},{"@type":"Offer","name":"Percorso nutrizionale di 5 mesi","price":"359","priceCurrency":"EUR"}]}</script>
 <meta name="description" content="Valentina Burati, dietista iscritta all’Albo. Percorsi nutrizionali di 3 e 5 mesi, in studio a Colognola ai Colli (VR) e consulenze da remoto in tutta Italia.">
 <link rel="preload" href="fonts/lora.woff" as="font" type="font/woff" crossorigin>
 <style>
@@ -49,7 +60,7 @@ section{padding-block:clamp(56px,9vw,104px)}
 header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:10px 24px;padding-block:14px;flex-wrap:wrap}
 .brand{text-decoration:none;color:var(--ink);font-size:1.25rem;font-weight:600;letter-spacing:-.005em}
-.brand i{font-weight:400;color:var(--radicchio);margin-left:.35em}
+.brand span{font-family:var(--ui);font-size:.72rem;font-weight:600;letter-spacing:.2em;color:var(--radicchio);margin-left:.8em;vertical-align:.18em}
 nav.menu{display:flex;gap:6px 22px;flex-wrap:wrap;font-size:.95rem}
 nav.menu a{color:var(--ink);text-decoration:none}
 nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
@@ -59,10 +70,18 @@ nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 .hero .lead{font-size:1.18rem;color:var(--muted);max-width:33em;margin-top:22px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero .note{margin-top:14px}
+.portrait{margin:0;justify-self:center;width:min(100%,400px);position:relative}
+.portrait::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1.5px solid var(--radicchio);border-radius:200px 200px 10px 10px}
+.portrait img{position:relative;display:block;width:100%;height:auto;border-radius:200px 200px 10px 10px;background:var(--alt)}
+@media (max-width:900px){.portrait{order:-1;width:min(62%,280px);margin-top:28px}}
+.creds{list-style:none;margin:clamp(40px,6vw,64px) 0 0;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 28px}
+.creds li{font-size:.9rem;color:var(--muted);line-height:1.45}
+.creds b{display:block;color:var(--blu);font-weight:600;font-size:1rem;margin-bottom:2px}
 .alt{background:var(--alt)}
 .letterhead{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--radicchio);border-radius:2px 2px 10px 10px;padding:24px 24px 20px;box-shadow:0 18px 40px -28px rgba(23,48,92,.45)}
 .letterhead .who{font-size:1.45rem;font-weight:600;line-height:1.2}
 .letterhead .role{font-style:italic;color:var(--radicchio);margin-top:2px}
+.caps{font-family:var(--ui);font-style:normal;font-size:.78em;font-weight:600;letter-spacing:.18em;margin-right:.25em}
 .letterhead dl{margin:20px 0 0;display:grid;gap:12px}
 .letterhead dt{font-size:.8rem;color:var(--muted);font-family:var(--ui);letter-spacing:.01em}
 .letterhead dd{margin:1px 0 0;font-size:.98rem;line-height:1.45}
@@ -125,7 +144,8 @@ nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 .cols3 div,.where div{border-top:2px solid var(--blu);padding-top:14px}
 .cols3 h3,.where h3{margin-bottom:6px}
 .cols3 p,.where p{color:var(--muted);font-size:.98rem}
-.where{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px}
+.where{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+.where div{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--radicchio);padding:18px 20px;border-radius:2px 2px 8px 8px}
 
 /* domande */
 .narrow{max-width:780px}
@@ -159,27 +179,50 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
 
 @media (max-width:900px){.hero,.about,.behind{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}.cols3{grid-template-columns:1fr}.facts{grid-template-columns:1fr}footer .cols{grid-template-columns:1fr}}
 @media (max-width:640px){.plan+.plan{border-top:1px solid var(--deep-line);padding-top:32px}body{font-size:17px}.plans,.where,.reasons,form{grid-template-columns:1fr}.steps{grid-template-columns:1fr}nav.menu{gap:4px 16px;font-size:.9rem}}
+.cta-bar{display:none}
+@media (max-width:640px){.cta-bar{display:block;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:6;text-align:center;background:var(--radicchio);color:#fff;text-decoration:none;font-weight:600;padding:.85rem 1rem;border-radius:8px;box-shadow:0 10px 30px -10px rgba(23,48,92,.55);transform:translateY(160%);transition:transform .25s}
+.cta-bar.on{transform:none}footer{padding-bottom:110px}}
+@media (max-width:900px){.creds{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 </head>
 <body>
 
 <header class="top"><div class="wrap">
-  <a class="brand" href="#inizio">Valentina Burati<i>dietista</i></a>
+  <a class="brand" href="#inizio">Valentina Burati<span>DIETISTA</span></a>
   <nav class="menu" aria-label="Menu principale"><a href="#chi-sono">Chi sono</a><a href="#percorsi">Percorsi e prezzi</a><a href="#dove">Dove</a><a href="#domande">Domande</a><a href="#prenota">Prenota</a></nav>
 </div></header>
 
 <main id="inizio">
 <section style="padding-top:0"><div class="wrap hero">
   <div>
-    <h1>Un percorso alimentare costruito sulla tua vita, con controlli regolari.</h1>
-    <p class="lead">Percorsi di 3 e 5 mesi per adulti e ragazzi: piano alimentare, lista della spesa e incontri già in calendario. In studio a Colognola ai Colli (Verona) oppure con consulenze da remoto in tutta Italia.</p>
+    <h1>Un percorso alimentare costruito sulla tua vita.</h1>
+    <p class="lead">Percorsi di 3 e 5 mesi per adulti e ragazzi, con controlli regolari: piano alimentare, lista della spesa e incontri già in calendario. In studio a Colognola ai Colli (Verona) oppure con consulenze da remoto in tutta Italia.</p>
     <div class="ctas"><a class="btn" href="#prenota">Prenota la chiamata conoscitiva</a><a class="btn quiet" href="#percorsi">Vedi i percorsi</a></div>
     <p class="note small muted">La chiamata conoscitiva dura 15 minuti, è inclusa e senza impegno.</p>
   </div>
-  <aside class="letterhead" aria-label="Dati professionali">
+  <figure class="portrait"><img src="img/valentina.jpg" srcset="img/valentina-small.jpg 360w, img/valentina.jpg 720w" sizes="(max-width:640px) 70vw, 400px" alt="Ritratto di Valentina Burati, dietista" width="720" height="900"></figure>
+</div></section>
+
+<div class="wrap"><ul class="creds" aria-label="In breve">
+  <li><b>Iscritta all’Albo</b>Ordine TSRM e PSTRP di Verona, n. 0051</li>
+  <li><b>Ricerca pubblicata</b>Studio su 318 operatori sanitari, rivista scientifica internazionale</li>
+  <li><b>Esperienza internazionale</b>Dietista per una piattaforma di fitness e benessere</li>
+  <li><b>In studio e da remoto</b>Colognola ai Colli (VR) e in tutta Italia</li>
+</ul></div>
+
+<section id="chi-sono"><div class="wrap about">
+  <div class="text">
+    <h2>Chi sono</h2>
+    <p>Sono Valentina Burati, dietista iscritta all’Albo e studentessa di Medicina e Chirurgia all’Università di Bologna. Non sono medico e non faccio diagnosi né prescrivo farmaci: questa formazione mi aiuta a leggere la documentazione clinica che mi porti e a collaborare con il tuo medico.</p>
+    <p>Da anni seguo clienti di tutto il mondo, anche in inglese, per una piattaforma internazionale di fitness e benessere molto conosciuta.</p>
+    <p class="pull">Per la tesi ho condotto un progetto pilota all’Azienda Ospedaliera Universitaria di Padova, con 318 operatori sanitari reclutati e oltre 400 colloqui motivazionali.</p>
+    <p class="muted">Lo studio, di cui sono coautrice, è pubblicato su <a href="https://doi.org/10.3390/ijerph15092053" rel="noopener"><i>International Journal of Environmental Research and Public Health</i></a> (2018). Il colloquio motivazionale aiuta la persona a trovare le proprie ragioni di cambiamento: lo uso in ogni incontro.</p>
+  </div>
+  <div class="side">
+<aside class="letterhead" aria-label="Dati professionali">
     <p class="who">Valentina Burati</p>
-    <p class="role">Dietista iscritta all’Albo</p>
+    <p class="role"><span class="caps">DIETISTA</span> iscritta all’Albo</p>
     <dl>
       <div><dt>Albo</dt><dd>Ordine TSRM e PSTRP di Verona, n. 0051</dd></div>
       <div><dt>Formazione</dt><dd>Laurea in Dietistica; studentessa di Medicina e Chirurgia all’Università di Bologna</dd></div>
@@ -187,17 +230,6 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
       <div><dt>Dove</dt><dd>Studio in Via Stra 67, Colognola ai Colli (VR); consulenze da remoto in tutta Italia</dd></div>
     </dl>
   </aside>
-</div></section>
-
-<section id="chi-sono" style="padding-top:0"><div class="wrap about">
-  <div class="text">
-    <h2>Chi sono</h2>
-    <p>Sono Valentina Burati, dietista iscritta all’Albo. Sto completando gli studi in Medicina e Chirurgia all’Università di Bologna: non sono medico e non faccio diagnosi né prescrivo farmaci. Questa formazione mi aiuta a comprendere la documentazione clinica che mi porti e a collaborare con il tuo medico.</p>
-    <p>Da diversi anni lavoro come dietista per una piattaforma internazionale di fitness e benessere molto conosciuta, seguendo clienti di tutto il mondo anche in inglese: un lavoro che mi ha insegnato a costruire piani per abitudini, culture e orari molto diversi.</p>
-    <p class="pull">Per la tesi ho condotto un progetto pilota all’Azienda Ospedaliera Universitaria di Padova, con 318 operatori sanitari reclutati e oltre 400 colloqui motivazionali.</p>
-    <p class="muted">Lo studio, di cui sono coautrice, è stato pubblicato nel 2018 sulla rivista scientifica <a href="https://doi.org/10.3390/ijerph15092053" rel="noopener"><i>International Journal of Environmental Research and Public Health</i></a>. Il colloquio motivazionale è un metodo che aiuta la persona a trovare le proprie ragioni di cambiamento: lo uso in ogni incontro.</p>
-  </div>
-  <div class="side">
 
   <div class="reasons">
     <div><h3>Un percorso, non un foglio</h3><p>Prima visita e controlli sono già in calendario: sai dall’inizio cosa succede ogni mese.</p></div>
@@ -223,23 +255,6 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
   <h2>Percorsi e prezzi</h2>
   <p class="intro">Prezzo fisso, pagamento anticipato, incontri già in calendario.</p>
   <div class="plans">
-    <article class="plan" aria-labelledby="p3">
-      <h3 id="p3">Percorso di 3 mesi</h3>
-      <p class="price">235 €<small>+ 2 € di bollo</small></p>
-      <ol class="cal" aria-label="Calendario del percorso di 3 mesi: prima visita nel primo mese, un controllo nel secondo e uno nel terzo">
-        <li class="first"><span class="dot"></span>1° mese</li>
-        <li><span class="dot"></span>2° mese</li>
-        <li><span class="dot"></span>3° mese</li>
-      </ol>
-      <ul>
-        <li>Chiamata conoscitiva di 15 minuti</li>
-        <li>Prima visita in studio o da remoto, circa 60 minuti</li>
-        <li>Piano alimentare personalizzato, lista della spesa e indicazioni pratiche</li>
-        <li>2 controlli da remoto di circa 30 minuti, con aggiornamento del piano</li>
-        <li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li>
-      </ul>
-      <p class="terms">Valido 4 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
-    </article>
     <article class="plan" aria-labelledby="p5">
       <h3 id="p5">Percorso di 5 mesi</h3>
       <p class="price">359 €<small>+ 2 € di bollo</small></p>
@@ -258,6 +273,23 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
         <li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li>
       </ul>
       <p class="terms">Anche in 2 rate da 185 € (370 € in tutto, più 2 € di bollo su ciascuna fattura). Valido 7 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
+    </article>
+    <article class="plan" aria-labelledby="p3">
+      <h3 id="p3">Percorso di 3 mesi</h3>
+      <p class="price">235 €<small>+ 2 € di bollo</small></p>
+      <ol class="cal" aria-label="Calendario del percorso di 3 mesi: prima visita nel primo mese, un controllo nel secondo e uno nel terzo">
+        <li class="first"><span class="dot"></span>1° mese</li>
+        <li><span class="dot"></span>2° mese</li>
+        <li><span class="dot"></span>3° mese</li>
+      </ol>
+      <ul>
+        <li>Chiamata conoscitiva di 15 minuti</li>
+        <li>Prima visita in studio o da remoto, circa 60 minuti</li>
+        <li>Piano alimentare personalizzato, lista della spesa e indicazioni pratiche</li>
+        <li>2 controlli da remoto di circa 30 minuti, con aggiornamento del piano</li>
+        <li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li>
+      </ul>
+      <p class="terms">Valido 4 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
     </article>
   </div>
   <p class="legend" aria-hidden="true"><span><i class="f"></i>prima visita</span><span><i></i>controllo</span></p>
@@ -282,17 +314,13 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <h2>A chi mi rivolgo</h2>
+<section id="dove"><div class="wrap">
+  <h2>Per chi e dove</h2>
   <div class="cols3">
     <div><h3>Adulti e ragazzi</h3><p>Che vogliono mangiare meglio con un metodo sostenibile e senza rinunce inutili.</p></div>
     <div><h3>Chi studia o lavora a turni</h3><p>Studenti in sessione, sanitari e lavoratori con orari irregolari: pasti pratici e organizzazione della spesa.</p></div>
     <div><h3>Su indicazione del medico</h3><p>Persone con una condizione clinica, sulla base della diagnosi e delle indicazioni del medico curante.</p></div>
   </div>
-</div></section>
-
-<section id="dove" style="padding-top:0"><div class="wrap">
-  <h2>Dove ci vediamo</h2>
   <div class="where">
     <div><h3>In studio</h3><p>Via Stra 67, Colognola ai Colli (Verona). Una giornata al mese, di sabato, su prenotazione: le date ti vengono indicate quando fai la richiesta.</p></div>
     <div><h3>Consulenze da remoto</h3><p>In tutta Italia, in videochiamata su Zoom, anche nel tardo pomeriggio e la sera. Bastano una connessione stabile e una bilancia pesapersone.</p></div>
@@ -341,9 +369,10 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
   <p class="small muted contact-line">Preferisci l’email? Scrivi a <a href="mailto:dott.ssavb@gmail.com">dott.ssavb@gmail.com</a>. Il numero di telefono compare dopo l’invio della richiesta.</p>
 </div></section>
 </main>
+<a class="cta-bar" id="ctabar" href="#prenota">Prenota la chiamata conoscitiva</a>
 
 <footer><div class="wrap cols">
-  <div><b>Valentina Burati, dietista</b><br>Ordine TSRM e PSTRP di Verona, iscrizione n. 0051<br>P.IVA 04795610239<br>PEC <a href="mailto:valentina.burati@pec.tsrm-pstrp.org">valentina.burati@pec.tsrm-pstrp.org</a></div>
+  <div><b>Valentina Burati</b> <span class="caps" style="color:var(--radicchio)">DIETISTA</span><br>Ordine TSRM e PSTRP di Verona, iscrizione n. 0051<br>P.IVA 04795610239<br>PEC <a href="mailto:valentina.burati@pec.tsrm-pstrp.org">valentina.burati@pec.tsrm-pstrp.org</a></div>
   <div>Studio: Via Stra 67, 37030 Colognola ai Colli (VR)<br>Consulenze da remoto in tutta Italia<br>Email <a href="mailto:dott.ssavb@gmail.com">dott.ssavb@gmail.com</a></div>
   <div>Titolo professionale: Dietista (laurea abilitante conseguita in Italia). Norme professionali: <a href="https://tsrm-pstrp.org/wp-content/uploads/2025/02/CD_Dietista.pdf" rel="noopener">Codice deontologico del Dietista</a> (FNO TSRM e PSTRP) e profilo professionale D.M. 744/1994. IVA non dovuta per le prestazioni sanitarie (art. 10, n. 18, D.P.R. 633/1972). I prezzi comprendono il contributo previdenziale INPS del 4%; sulle fatture oltre 77,47 € si aggiungono 2 € di imposta di bollo. Le informazioni di questo sito hanno carattere informativo e non sostituiscono una visita.
     <ul><li><a href="privacy.html">Privacy e cookie</a></li><li><a href="condizioni.html">Condizioni del percorso</a></li><li><a href="consenso.html">Consenso informato</a></li></ul></div>
@@ -365,6 +394,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
       .then(function(){f.hidden=true;out.hidden=false;var num=PH?atob(PH):"";document.getElementById("phone-line").textContent=num?"Se preferisci, puoi chiamarmi al "+num+".":"";out.scrollIntoView({block:"nearest"})})
       .catch(function(){fail.hidden=false;send.disabled=false;send.textContent="Invia la richiesta"});});
 })();
+(function(){var b=document.getElementById("ctabar"),hero=document.querySelector(".hero .ctas"),form=document.getElementById("prenota");if(!b||!("IntersectionObserver" in window))return;var past=false,atForm=false;function u(){b.classList.toggle("on",past&&!atForm)}new IntersectionObserver(function(e){past=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;u()}).observe(hero);new IntersectionObserver(function(e){atForm=e[0].isIntersecting;u()}).observe(form)})();
 </script>
 </body>
 </html>

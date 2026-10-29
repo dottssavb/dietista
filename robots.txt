@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dottssavb.github.io/dietista/sitemap.xml
