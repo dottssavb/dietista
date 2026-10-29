@@ -357,7 +357,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     <label class="full" for="f-msg">Disponibilità e note (facoltative)<textarea id="f-msg" name="note" rows="3" placeholder="Giorni e orari in cui sei disponibile. Non inserire qui dati sulla salute: li raccogliamo alla visita."></textarea></label>
     <p class="small muted full">Se la richiesta riguarda una persona minorenne, deve compilarla un genitore o chi ne esercita la responsabilità genitoriale.</p>
     <label class="check full" for="f-privacy"><input type="checkbox" id="f-privacy" required> <span>Ho letto l’<a href="privacy.html" target="_blank" rel="noopener">informativa sulla privacy</a>.</span></label>
-    <input type="text" name="_honey" id="f-hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px" aria-hidden="true">
+    <input type="checkbox" name="botcheck" id="f-hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px" aria-hidden="true">
     <p id="err" class="small full" hidden style="color:var(--radicchio)">Inserisci nome e un recapito e conferma di aver letto l’informativa.</p>
     <div class="full"><button class="btn" type="submit" id="f-send">Invia la richiesta</button></div>
   </form>
@@ -392,10 +392,12 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
   f.addEventListener("submit",function(e){e.preventDefault();
     var n=document.getElementById("f-name").value.trim(),c=document.getElementById("f-contact").value.trim(),p=document.getElementById("f-privacy").checked;
     if(!n||!c||!p){err.hidden=false;return}err.hidden=true;fail.hidden=true;
-    if(document.getElementById("f-hp").value)return;
+    if(document.getElementById("f-hp").checked)return;
     send.disabled=true;send.textContent="Invio in corso…";
     var data={nome:n,contatto:c,richiesta:document.getElementById("f-plan").value,modalita:document.getElementById("f-where").value,note:document.getElementById("f-msg").value.trim()||"—",_subject:"Nuova richiesta dal sito: "+document.getElementById("f-plan").value,_template:"table",_captcha:"false"};
-    fetch("https://formsubmit.co/ajax/dott.ssavb@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
+    var payload={access_key:"d3288490-e478-432a-9268-5c45e151e95c",subject:data._subject,from_name:"Sito Valentina Burati",nome:n,contatto:c,richiesta:data.richiesta,modalita:data.modalita,note:data.note};
+    if(/@/.test(c))payload.replyto=c;
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload)})
       .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||String(j.success)==="false")throw new Error(j.message||"http");return j})})
       .then(function(){f.hidden=true;out.hidden=false;var num=PH?atob(PH):"";document.getElementById("phone-line").textContent=num?"Se preferisci, puoi chiamarmi al "+num+".":"";out.scrollIntoView({block:"nearest"})})
       .catch(function(e){var body="Nome: "+n+"\nRecapito: "+c+"\nRichiesta: "+data.richiesta+"\nModalità: "+data.modalita+"\nNote: "+data.note+"\n\nHo letto l'informativa sulla privacy.";
