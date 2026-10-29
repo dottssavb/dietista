@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valentina Burati Dietista</title>
+<meta name="description" content="Valentina Burati, dietista iscritta all’Albo. Percorsi nutrizionali di 3 e 6 mesi, in studio a Colognola ai Colli (VR) e online in tutta Italia.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+/* Layout: colonna editoriale stretta, una fascia blu notte per i percorsi, percorso del paziente come linea del tempo reale */
+:root{
+  --bg:#f5f6f3; --surface:#ffffff; --ink:#1d2740; --muted:#5b6274; --line:#dfe1dc;
+  --night:#1d2740; --night-ink:#eef0ee; --wine:#7a2d3b; --sage:#6e8f7b; --sage-soft:#e6eee8; --wine-soft:#f3e7e9;
+  --display:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --body:"Nunito Sans","Segoe UI",system-ui,sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11161f;--surface:#18202c;--ink:#e8eae6;--muted:#a3a9b5;--line:#2a3343;--night:#0b0f16;--night-ink:#e8eae6;--wine:#d48a98;--sage:#9fbfa9;--sage-soft:#1f2c25;--wine-soft:#2c1c21;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11161f;--surface:#18202c;--ink:#e8eae6;--muted:#a3a9b5;--line:#2a3343;--night:#0b0f16;--night-ink:#e8eae6;--wine:#d48a98;--sage:#9fbfa9;--sage-soft:#1f2c25;--wine-soft:#2c1c21;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.4rem,6vw,4rem)}h2{font-size:clamp(1.9rem,4vw,2.6rem)}h3{font-size:1.45rem}
+p{margin:0}
+a{color:var(--wine)}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:700}
+.muted{color:var(--muted)}.small{font-size:.9rem}
+.btn{display:inline-block;font:inherit;font-weight:700;border-radius:999px;padding:.75rem 1.4rem;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--sage);outline-offset:2px}
+section{padding-block:clamp(48px,8vw,88px)}
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:1.35rem;font-weight:600;text-decoration:none;color:var(--ink)}
+.brand span{display:block;font-family:var(--body);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+nav.menu{display:flex;gap:18px;flex-wrap:wrap}nav.menu a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}nav.menu a:hover{color:var(--wine)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,5vw,64px);align-items:end}
+.hero > *{min-width:0}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:34em;margin-top:18px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.card-id{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:12px}
+.card-id dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:.95rem}
+.card-id dt{color:var(--muted)}.card-id dd{margin:0;font-weight:600}
+.badge{display:inline-block;background:var(--sage-soft);color:var(--sage);border-radius:999px;padding:3px 10px;font-size:.8rem;font-weight:700}
+/* chi sono */
+.two{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,64px)}
+.two > *{min-width:0}
+.reasons{display:grid;gap:18px}
+.reason{display:grid;gap:4px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.reason:last-child{border-bottom:0}
+/* percorso */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px;counter-reset:step}
+.step{position:relative;padding-top:18px;border-top:2px solid var(--ink);display:grid;gap:6px;min-width:0}
+.step b{font-family:var(--display);font-size:1.25rem}
+.step .when{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--wine);font-weight:700}
+/* prezzi */
+.band{background:var(--night);color:var(--night-ink)}
+.band .muted{color:color-mix(in srgb,var(--night-ink) 70%,transparent)}
+.band .eyebrow{color:var(--sage)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.plan{border:1px solid color-mix(in srgb,var(--night-ink) 22%,transparent);border-radius:var(--r);padding:22px;display:grid;gap:10px;align-content:start;min-width:0}
+.plan.feat{background:color-mix(in srgb,var(--night-ink) 8%,transparent);border-color:var(--sage)}
+.price{font-family:var(--display);font-size:2.6rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.price small{font-family:var(--body);font-size:.85rem;font-weight:400}
+.plan ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.95rem}
+.single{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:22px;font-size:.95rem}
+.single span b{font-variant-numeric:tabular-nums}
+/* per chi */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:6px;min-width:0}
+/* dove */
+.where{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+/* faq */
+details{border-bottom:1px solid var(--line);padding-block:14px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--wine);font-weight:700}details[open] summary::after{content:"–"}
+details p{margin-top:8px;color:var(--muted);max-width:62ch}
+/* prenota */
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.7rem .8rem;width:100%}
+.full{grid-column:1/-1}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400}.check input{width:auto;margin-top:5px}
+.out{background:var(--sage-soft);border-radius:var(--r);padding:18px;display:grid;gap:10px}
+.out pre{white-space:pre-wrap;font-family:var(--body);margin:0;font-size:.95rem}
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:.88rem;color:var(--muted)}
+footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.todo{background:var(--wine-soft);color:var(--wine);border-radius:4px;padding:0 4px;font-weight:600}
+@media (max-width:820px){.hero,.two,.where{grid-template-columns:1fr}.plans,.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}footer .cols{grid-template-columns:1fr}}
+@media (max-width:520px){.timeline{grid-template-columns:1fr}form{grid-template-columns:1fr}nav.menu{gap:12px}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#inizio">Valentina Burati<span>Dietista</span></a>
+  <nav class="menu" aria-label="Menu principale"><a href="#chi-sono">Chi sono</a><a href="#percorsi">Percorsi e prezzi</a><a href="#dove">Studio e online</a><a href="#domande">Domande</a><a href="#prenota">Prenota</a></nav>
+</div></header>
+
+<main id="inizio">
+<section><div class="wrap hero">
+  <div>
+    <p class="eyebrow">Dietista iscritta all’Albo · in studio e online</p>
+    <h1>Un percorso alimentare costruito sulla tua vita, con controlli regolari.</h1>
+    <p class="lead">Percorsi di 3 e 6 mesi per adulti e ragazzi: piano alimentare, lista della spesa e incontri programmati, in studio a Colognola ai Colli (Verona) oppure online.</p>
+    <div class="ctas"><a class="btn" href="#prenota">Richiedi un appuntamento</a><a class="btn ghost" href="#percorsi">Vedi i percorsi</a></div>
+  </div>
+  <aside class="card-id" aria-label="Dati professionali">
+    <span class="badge">Professionista sanitaria</span>
+    <dl>
+      <dt>Professione</dt><dd>Dietista</dd>
+      <dt>Albo</dt><dd>Ordine TSRM e PSTRP di <span class="todo">[provincia]</span>, n. <span class="todo">[numero]</span></dd>
+      <dt>Formazione</dt><dd>Laurea in Dietistica · Medicina e Chirurgia, ultimo anno (Università di Bologna)</dd>
+      <dt>Studio</dt><dd>Colognola ai Colli (VR)</dd>
+      <dt>Online</dt><dd>In tutta Italia</dd>
+    </dl>
+  </aside>
+</div></section>
+
+<section id="chi-sono" style="padding-top:0"><div class="wrap two">
+  <div style="display:grid;gap:16px;align-content:start">
+    <p class="eyebrow">Chi sono</p>
+    <h2>Dietista, con la formazione medica di chi sta per diventare medico.</h2>
+    <p class="muted">Sono Valentina Burati. Lavoro come dietista e sto completando gli studi in Medicina e Chirurgia all’Università di Bologna. Questa doppia formazione mi permette di leggere esami e terapie, di capire la storia clinica di chi ho davanti e di dialogare con il suo medico.</p>
+  </div>
+  <div class="reasons">
+    <div class="reason"><h3>Un percorso, non un foglio</h3><p class="muted">Prima visita e controlli sono già in calendario: sai dall’inizio cosa succede ogni mese e non resti solo dopo il primo incontro.</p></div>
+    <div class="reason"><h3>Piani che reggono la vita vera</h3><p class="muted">Lista della spesa con costi realistici, pasti per chi studia o lavora a turni, ricette semplici da preparare in poco tempo.</p></div>
+    <div class="reason"><h3>Collaborazione con il medico</h3><p class="muted">Per le persone con una patologia lavoro sulla base della diagnosi e dell’indicazione del medico curante e, se lo desideri, lo aggiorno sull’andamento.</p></div>
+    <div class="reason"><h3>Chiarezza e rispetto</h3><p class="muted">Prezzi scritti prima di iniziare, fattura per ogni pagamento, nessuna promessa miracolosa e nessun giudizio.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <p class="eyebrow">Come funziona un percorso</p>
+  <h2>Quattro tappe, dalla prima visita al mantenimento.</h2>
+  <div class="timeline">
+    <div class="step"><span class="when">Settimana 1</span><b>Prima visita</b><p class="muted small">Storia clinica e abitudini, misure, obiettivi realistici. In studio o online, circa 60 minuti.</p></div>
+    <div class="step"><span class="when">Entro 7 giorni</span><b>Il tuo piano</b><p class="muted small">Piano alimentare, lista della spesa e indicazioni pratiche, inviati per email.</p></div>
+    <div class="step"><span class="when">Ogni 3–5 settimane</span><b>Controlli</b><p class="muted small">Incontri online di circa 30 minuti per verificare, correggere e adattare il piano.</p></div>
+    <div class="step"><span class="when">Fine percorso</span><b>Autonomia</b><p class="muted small">Strumenti per proseguire da sola o da solo, con il mantenimento se lo desideri.</p></div>
+  </div>
+</div></section>
+
+<section id="percorsi" class="band"><div class="wrap">
+  <p class="eyebrow">Percorsi e prezzi</p>
+  <h2>Percorsi pagati in anticipo, con un piccolo vantaggio sul prezzo delle singole visite.</h2>
+  <div class="plans">
+    <article class="plan">
+      <h3>Avvio · 3 mesi</h3>
+      <div class="price">239 € <small>invece di 272 €</small></div>
+      <ul><li>Prima visita in studio o online</li><li>2 controlli online</li><li>Piano alimentare e lista della spesa</li></ul>
+      <p class="muted small">Valido 4 mesi dal primo incontro.</p>
+    </article>
+    <article class="plan feat">
+      <h3>Completo · 6 mesi</h3>
+      <div class="price">429 € <small>invece di 497 €</small></div>
+      <ul><li>Prima visita</li><li>5 controlli: 1 in studio e 4 online</li><li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li></ul>
+      <p class="muted small">Anche in 2 rate da 219 € (438 € in tutto). Valido 8 mesi.</p>
+    </article>
+    <article class="plan">
+      <h3>Mantenimento · 6 mesi</h3>
+      <div class="price">199 € <small>invece di 225 €</small></div>
+      <ul><li>3 controlli online</li><li>Per chi ha già concluso un percorso</li></ul>
+      <p class="muted small">Valido 8 mesi.</p>
+    </article>
+  </div>
+  <div class="single"><span>Singola prima visita: <b>122 €</b></span><span>Singolo controllo: <b>75 €</b></span><span>Pagamento anticipato tracciabile · fattura per ogni pagamento</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow">Per chi è</p>
+  <h2>A chi mi rivolgo</h2>
+  <div class="grid3">
+    <div class="tile"><h3>Adulti e ragazzi</h3><p class="muted small">Che vogliono mangiare meglio con un metodo sostenibile e senza rinunce inutili.</p></div>
+    <div class="tile"><h3>Chi studia o lavora a turni</h3><p class="muted small">Studenti in sessione, sanitari e lavoratori con orari irregolari: pasti pratici e organizzazione della spesa.</p></div>
+    <div class="tile"><h3>Su indicazione del medico</h3><p class="muted small">Persone con una condizione clinica, sulla base della diagnosi e delle indicazioni del medico curante.</p></div>
+  </div>
+</div></section>
+
+<section id="dove" style="padding-top:0"><div class="wrap">
+  <p class="eyebrow">Studio e online</p>
+  <h2>Dove ci vediamo</h2>
+  <div class="where">
+    <div class="tile"><h3>In studio</h3><p class="muted small">Colognola ai Colli (Verona), <span class="todo">[indirizzo]</span>. Una giornata al mese, di sabato, su prenotazione: le date sono indicate al momento della richiesta.</p></div>
+    <div class="tile"><h3>Online</h3><p class="muted small">Videochiamata su piattaforma sicura, anche nel tardo pomeriggio e la sera. Basta una connessione stabile e una bilancia pesapersone.</p></div>
+  </div>
+</div></section>
+
+<section id="domande" style="padding-top:0"><div class="wrap" style="max-width:820px">
+  <p class="eyebrow">Domande frequenti</p>
+  <h2>Prima di prenotare</h2>
+  <div style="margin-top:18px">
+    <details><summary>Posso spostare un appuntamento?</summary><p>Sì, gratuitamente fino a 24 ore prima. Un incontro saltato senza preavviso si considera svolto.</p></details>
+    <details><summary>Il percorso è rimborsabile?</summary><p>I percorsi sono pagati in anticipo e non sono rimborsabili, ma gli incontri si possono spostare con 24 ore di preavviso entro il periodo di validità. Le condizioni complete sono nel preventivo che firmi prima di iniziare.</p></details>
+    <details><summary>La visita è detraibile?</summary><p>Ricevi sempre la fattura con pagamento tracciabile. Per la detraibilità nella dichiarazione dei redditi verifica i requisiti con il tuo CAF o commercialista.</p></details>
+    <details><summary>Cosa devo portare alla prima visita?</summary><p>Esami del sangue recenti, eventuali referti e terapie in corso, e se vuoi un diario di 3 giorni di ciò che mangi. Prima dell’incontro ricevi un breve questionario.</p></details>
+    <details><summary>Come funzionano le visite online?</summary><p>Ricevi un link per la videochiamata e il consenso informato alla televisita. Il piano e i materiali arrivano per email.</p></details>
+    <details><summary>Ho una patologia: posso rivolgermi a te?</summary><p>Sì, sulla base della diagnosi del medico. Ti chiederò la documentazione clinica e, se lo desideri, mi coordinerò con il tuo medico curante.</p></details>
+  </div>
+</div></section>
+
+<section id="prenota" style="padding-top:0"><div class="wrap" style="max-width:820px">
+  <p class="eyebrow">Prenota</p>
+  <h2>Richiedi un appuntamento</h2>
+  <p class="muted" style="margin-top:10px">Compila la richiesta: ti rispondo entro 24 ore con le date disponibili, il preventivo e il link per il pagamento.</p>
+  <form id="book" novalidate>
+    <label for="f-name">Nome e cognome<input id="f-name" name="nome" autocomplete="name" required></label>
+    <label for="f-contact">Email o telefono<input id="f-contact" name="contatto" autocomplete="email" required></label>
+    <label for="f-plan">Percorso<select id="f-plan" name="percorso"><option>Avvio · 3 mesi</option><option selected>Completo · 6 mesi</option><option>Mantenimento · 6 mesi</option><option>Prima visita singola</option><option>Non so ancora</option></select></label>
+    <label for="f-where">Modalità<select id="f-where" name="modalita"><option>Online</option><option>In studio (Colognola ai Colli)</option><option>Indifferente</option></select></label>
+    <label class="full" for="f-msg">Disponibilità e note (facoltative)<textarea id="f-msg" name="note" rows="3" placeholder="Giorni e orari in cui sei disponibile. Non inserire qui dati sulla salute: li raccogliamo alla visita."></textarea></label>
+    <label class="check full" for="f-privacy"><input type="checkbox" id="f-privacy" required> Ho letto l’informativa sulla privacy e acconsento a essere ricontattata/o per questa richiesta.</label>
+    <div class="full"><button class="btn" type="submit">Invia la richiesta</button></div>
+  </form>
+  <div id="out" class="out" hidden style="margin-top:16px">
+    <b>Anteprima del sito: in questa bozza la richiesta non viene inviata.</b>
+    <p class="small">Nel sito pubblicato il modulo arriverà direttamente alla tua email. Intanto puoi copiare il testo:</p>
+    <pre id="out-text"></pre>
+    <div><button class="btn ghost" type="button" id="copy">Copia il testo</button></div>
+  </div>
+  <p id="err" class="small" style="color:var(--wine);margin-top:8px" hidden>Compila nome, contatto e la casella della privacy.</p>
+  <p class="small muted" style="margin-top:16px">Contatti diretti: <span class="todo">[email]</span> · <span class="todo">[telefono]</span></p>
+</div></section>
+</main>
+
+<footer><div class="wrap cols">
+  <div><b style="color:var(--ink)">Valentina Burati · Dietista</b><br>Ordine TSRM e PSTRP di <span class="todo">[provincia]</span>, iscrizione n. <span class="todo">[numero]</span><br>P.IVA <span class="todo">[partita IVA]</span></div>
+  <div>Studio: Colognola ai Colli (VR), <span class="todo">[indirizzo]</span><br>Visite online in tutta Italia</div>
+  <div>Le informazioni di questo sito hanno carattere informativo e non sostituiscono una visita.<br><a href="#privacy">Privacy</a> · <a href="#privacy">Cookie</a></div>
+</div>
+<div class="wrap" id="privacy" style="margin-top:20px"><details><summary>Informativa privacy (bozza da completare e far verificare)</summary><p>Titolare del trattamento: Valentina Burati, <span class="todo">[indirizzo, email]</span>. I dati inviati con il modulo (nome, contatti, preferenze) sono usati solo per rispondere alla richiesta di appuntamento e conservati per il tempo necessario. I dati sanitari sono raccolti solo durante la visita, per finalità di cura, e conservati secondo gli obblighi di legge. Puoi chiedere in ogni momento accesso, rettifica o cancellazione scrivendo a <span class="todo">[email]</span>. Il sito non usa cookie di profilazione. Testo da far verificare da un consulente prima della pubblicazione.</p></details></div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById("book"),out=document.getElementById("out"),txt=document.getElementById("out-text"),err=document.getElementById("err");
+  f.addEventListener("submit",function(e){e.preventDefault();
+    var n=document.getElementById("f-name").value.trim(),c=document.getElementById("f-contact").value.trim(),p=document.getElementById("f-privacy").checked;
+    if(!n||!c||!p){err.hidden=false;return}err.hidden=true;
+    txt.textContent="Richiesta di appuntamento\nNome: "+n+"\nContatto: "+c+"\nPercorso: "+document.getElementById("f-plan").value+"\nModalità: "+document.getElementById("f-where").value+"\nNote: "+(document.getElementById("f-msg").value.trim()||"—");
+    out.hidden=false;out.scrollIntoView({block:"nearest"});});
+  document.getElementById("copy").addEventListener("click",function(){var b=this;try{navigator.clipboard.writeText(txt.textContent).then(function(){b.textContent="Copiato"},function(){sel()})}catch(e){sel()}
+    function sel(){var r=document.createRange();r.selectNodeContents(txt);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Testo selezionato"}});
+})();
+</script>
+
+</body>
+</html>
