@@ -55,6 +55,8 @@ section{padding-block:clamp(56px,9vw,104px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn:not(.quiet){color:#2C0E19}}
 :root[data-theme="dark"] .btn:not(.quiet){color:#2C0E19}
 [hidden]{display:none!important}
+.skip{position:absolute;left:12px;top:-60px;z-index:10;background:var(--blu);color:#fff;padding:.5rem .9rem;border-radius:6px}
+.skip:focus{top:12px}
 
 /* testata */
 header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -70,11 +72,13 @@ nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 .hero .lead{font-size:1.18rem;color:var(--muted);max-width:33em;margin-top:22px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero .note{margin-top:14px}
-.portrait{margin:0;justify-self:center;width:min(100%,400px);position:relative}
-.portrait::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1.5px solid var(--radicchio);border-radius:200px 200px 10px 10px}
-.portrait img{position:relative;display:block;width:100%;height:auto;border-radius:200px 200px 10px 10px;background:var(--alt)}
-@media (max-width:900px){.portrait{order:-1;width:min(62%,280px);margin-top:28px}}
-.creds{list-style:none;margin:clamp(40px,6vw,64px) 0 0;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 28px}
+.portrait{margin:0;justify-self:center;width:min(100%,300px);position:relative;padding:14px}
+.portrait::before{content:"";position:absolute;inset:0;border:1px solid var(--radicchio);border-radius:50%}
+.portrait::after{content:"";position:absolute;inset:7px;border:1px solid color-mix(in srgb,var(--blu) 35%,transparent);border-radius:50%;pointer-events:none}
+.portrait img{position:relative;display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;background:var(--alt);filter:saturate(.92) contrast(1.02)}
+.portrait figcaption{text-align:center;margin-top:14px;font-size:.85rem;font-style:italic;color:var(--muted)}
+@media (max-width:900px){.portrait{order:-1;width:min(60%,220px);margin-top:28px;padding:10px}}
+.creds{list-style:none;margin:clamp(28px,4vw,48px) 0 0;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 28px}
 .creds li{font-size:.9rem;color:var(--muted);line-height:1.45}
 .creds b{display:block;color:var(--blu);font-weight:600;font-size:1rem;margin-bottom:2px}
 .alt{background:var(--alt)}
@@ -187,6 +191,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
 </style>
 </head>
 <body>
+<a class="skip" href="#inizio">Vai al contenuto</a>
 
 <header class="top"><div class="wrap">
   <a class="brand" href="#inizio">Valentina Burati<span>DIETISTA</span></a>
@@ -201,7 +206,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     <div class="ctas"><a class="btn" href="#prenota">Prenota la chiamata conoscitiva</a><a class="btn quiet" href="#percorsi">Vedi i percorsi</a></div>
     <p class="note small muted">La chiamata conoscitiva dura 15 minuti, è inclusa e senza impegno.</p>
   </div>
-  <figure class="portrait"><img src="img/valentina.jpg" srcset="img/valentina-small.jpg 360w, img/valentina.jpg 720w" sizes="(max-width:640px) 70vw, 400px" alt="Ritratto di Valentina Burati, dietista" width="720" height="900"></figure>
+  <figure class="portrait"><img src="img/valentina.jpg" srcset="img/valentina-small.jpg 300w, img/valentina.jpg 560w" sizes="(max-width:900px) 220px, 300px" alt="Ritratto di Valentina Burati, dietista" width="560" height="560" fetchpriority="high"></figure>
 </div></section>
 
 <div class="wrap"><ul class="creds" aria-label="In breve">
