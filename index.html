@@ -137,6 +137,19 @@ nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 .legend i.f{background:var(--rosa);border-color:var(--rosa)}
 .legend i.e,.cal .end .dot{background:var(--on-deep);border-color:var(--on-deep);box-shadow:inset 0 0 0 4px var(--blu-deep)}
 .legend i.t,.cal .follow .dot{border-style:dashed;opacity:.75}
+.compare{margin-top:48px;padding-top:28px;border-top:1px solid var(--deep-line)}
+.compare h3{font-size:1.6rem;font-weight:500;color:#fff}
+.compare .muted{margin-top:8px;max-width:40rem}
+.compare .tw{overflow-x:auto;margin-top:18px}
+.compare table{width:100%;min-width:560px;border-collapse:collapse;font-size:.95rem;font-variant-numeric:lining-nums;word-spacing:normal;letter-spacing:normal}
+.compare th,.compare td{padding:10px 12px;border-bottom:1px solid var(--deep-line);text-align:left;vertical-align:middle}
+.compare thead th{font-weight:600;color:var(--on-deep-muted);font-size:.86rem}
+.compare thead th:nth-child(3),.compare thead th:nth-child(5){color:#fff}
+.compare tbody th{font-weight:400;color:var(--on-deep-muted)}
+.compare td:nth-child(3),.compare td:nth-child(5){background:rgba(255,255,255,.05)}
+.compare .inc{color:var(--rosa);font-style:italic}
+.compare .tot th,.compare .tot td{font-weight:600;color:#fff;font-size:1.05rem}
+.compare .diff td{color:var(--rosa);font-weight:600}
 .behind{margin-top:56px;padding-top:28px;border-top:1px solid var(--deep-line);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,5vw,64px)}
 .behind h3{font-size:1.6rem;font-weight:500}
 .behind dl{margin:0;display:grid;gap:14px}
@@ -283,7 +296,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
         <li>Telefonata di follow-up facoltativa a un mese dalla fine del percorso</li>
         <li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li>
       </ul>
-      <p class="terms">Anche in 3 rate (120 €, 120 € e 119 €), da saldare entro il quarto incontro, senza costi aggiuntivi oltre al bollo di 2 € su ogni fattura. Valido 7 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
+      <p class="terms">Anche in 3 rate (150 € alla prima visita, poi 105 € e 104 €), da saldare entro il quarto incontro, senza costi aggiuntivi oltre al bollo di 2 € su ogni fattura. Valido 7 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
     </article>
     <article class="plan" aria-labelledby="p3">
       <h3 id="p3">Percorso di 3 mesi</h3>
@@ -304,10 +317,27 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
         <li>Telefonata di follow-up facoltativa a un mese dalla fine del percorso</li>
         <li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li>
       </ul>
-      <p class="terms">Anche in 2 rate (120 € e 115 €), da saldare entro il terzo incontro, senza costi aggiuntivi oltre al bollo di 2 € su ogni fattura. Valido 4 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
+      <p class="terms">Anche in 2 rate (150 € alla prima visita, poi 85 €), da saldare entro il terzo incontro, senza costi aggiuntivi oltre al bollo di 2 € su ogni fattura. Valido 4 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
     </article>
   </div>
   <p class="legend" aria-hidden="true"><span><i class="f"></i>prima visita</span><span><i></i>controllo</span><span><i class="e"></i>incontro finale</span><span><i class="t"></i>telefonata facoltativa</span></p>
+
+  <div class="compare">
+    <h3>Percorso o visite singole: il confronto</h3>
+    <p class="muted">Gli stessi incontri, prenotati uno alla volta, costano di più e non comprendono il supporto tra un incontro e l’altro.</p>
+    <div class="tw"><table>
+      <thead><tr><th scope="col"></th><th scope="col">Visite singole</th><th scope="col">Percorso di 3 mesi</th><th scope="col">Visite singole</th><th scope="col">Percorso di 5 mesi</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Prima visita</th><td>122 €</td><td rowspan="3" class="inc">compresi</td><td>122 €</td><td rowspan="3" class="inc">compresi</td></tr>
+        <tr><th scope="row">Controlli</th><td>2 × 75 € = 150 €</td><td>4 × 75 € = 300 €</td></tr>
+        <tr><th scope="row">Incontro finale</th><td>75 €</td><td>75 €</td></tr>
+        <tr><th scope="row">Risposte via email, telefonata dopo un mese</th><td>non previste</td><td class="inc">comprese</td><td>non previste</td><td class="inc">comprese</td></tr>
+        <tr class="tot"><th scope="row">Totale</th><td>347 €</td><td>235 €</td><td>497 €</td><td>359 €</td></tr>
+        <tr class="diff"><th scope="row">Differenza</th><td colspan="2">112 € in meno (−32%)</td><td colspan="2">138 € in meno (−28%)</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small muted">Prezzi senza IVA (prestazione sanitaria); a tutti si aggiunge il bollo di 2 € sulle fatture oltre 77,47 €. Il prezzo del percorso vale se lo porti a termine: se lo interrompi, gli incontri svolti si contano al prezzo delle visite singole (dettagli nelle <a href="condizioni.html">condizioni</a>).</p>
+  </div>
 
   <div class="behind">
     <div>
