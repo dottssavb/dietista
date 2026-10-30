@@ -135,6 +135,8 @@ nav.menu a:hover{color:var(--radicchio);text-decoration:underline}
 .legend span{display:inline-flex;align-items:center;gap:7px}
 .legend i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--on-deep);display:inline-block}
 .legend i.f{background:var(--rosa);border-color:var(--rosa)}
+.legend i.e,.cal .end .dot{background:var(--on-deep);border-color:var(--on-deep);box-shadow:inset 0 0 0 4px var(--blu-deep)}
+.legend i.t,.cal .follow .dot{border-style:dashed;opacity:.75}
 .behind{margin-top:56px;padding-top:28px;border-top:1px solid var(--deep-line);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,5vw,64px)}
 .behind h3{font-size:1.6rem;font-weight:500}
 .behind dl{margin:0;display:grid;gap:14px}
@@ -252,7 +254,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     <li><span class="when">Settimana 1</span><b>Prima visita</b><p>Storia clinica e abitudini, misure, obiettivi realistici. In studio o da remoto, circa 60 minuti.</p></li>
     <li><span class="when">Entro 7 giorni</span><b>Il tuo piano</b><p>Piano alimentare, lista della spesa e indicazioni pratiche, inviati per email.</p></li>
     <li><span class="when">Ogni 3–5 settimane</span><b>Controlli</b><p>Consulenze da remoto di circa 30 minuti per verificare, correggere e adattare il piano.</p></li>
-    <li><span class="when">Fine percorso</span><b>Autonomia</b><p>Strumenti per proseguire da sola o da solo, e controlli singoli se ti servono.</p></li>
+    <li><span class="when">Fine percorso</span><b>Incontro finale</b><p>Facciamo il punto e ricevi il materiale per mantenere nel tempo le abitudini e i risultati raggiunti. Dopo un mese, se vuoi, una breve telefonata per vedere come va.</p></li>
   </ol>
 </div></section>
 
@@ -263,18 +265,22 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     <article class="plan" aria-labelledby="p5">
       <h3 id="p5">Percorso di 5 mesi</h3>
       <p class="price">359 €<small>+ 2 € di bollo</small></p>
-      <ol class="cal" aria-label="Calendario del percorso di 5 mesi: prima visita nel primo mese, poi un controllo al mese per quattro mesi">
+      <ol class="cal" aria-label="Calendario del percorso di 5 mesi: prima visita nel primo mese, un controllo al mese per quattro mesi, incontro finale e telefonata facoltativa un mese dopo">
         <li class="first"><span class="dot"></span>1°</li>
         <li><span class="dot"></span>2°</li>
         <li><span class="dot"></span>3°</li>
         <li><span class="dot"></span>4°</li>
-        <li><span class="dot"></span>5° mese</li>
+        <li><span class="dot"></span>5°</li>
+        <li class="end"><span class="dot"></span>fine</li>
+        <li class="follow"><span class="dot"></span>+1 mese</li>
       </ol>
       <ul>
         <li>Chiamata conoscitiva di 15 minuti</li>
         <li>Prima visita in studio o da remoto, circa 60 minuti</li>
         <li>Piano alimentare personalizzato, lista della spesa e indicazioni pratiche</li>
         <li>4 controlli da remoto di circa 30 minuti, con aggiornamento del piano</li>
+        <li>Incontro finale di circa 45 minuti, con il materiale per mantenere nel tempo abitudini e risultati raggiunti</li>
+        <li>Telefonata di follow-up facoltativa a un mese dalla fine del percorso</li>
         <li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li>
       </ul>
       <p class="terms">Anche in 2 rate da 185 € (370 € in tutto, più 2 € di bollo su ciascuna fattura). Valido 7 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
@@ -282,22 +288,26 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
     <article class="plan" aria-labelledby="p3">
       <h3 id="p3">Percorso di 3 mesi</h3>
       <p class="price">235 €<small>+ 2 € di bollo</small></p>
-      <ol class="cal" aria-label="Calendario del percorso di 3 mesi: prima visita nel primo mese, un controllo nel secondo e uno nel terzo">
+      <ol class="cal" aria-label="Calendario del percorso di 3 mesi: prima visita nel primo mese, un controllo nel secondo e uno nel terzo, incontro finale e telefonata facoltativa un mese dopo">
         <li class="first"><span class="dot"></span>1° mese</li>
         <li><span class="dot"></span>2° mese</li>
         <li><span class="dot"></span>3° mese</li>
+        <li class="end"><span class="dot"></span>fine</li>
+        <li class="follow"><span class="dot"></span>+1 mese</li>
       </ol>
       <ul>
         <li>Chiamata conoscitiva di 15 minuti</li>
         <li>Prima visita in studio o da remoto, circa 60 minuti</li>
         <li>Piano alimentare personalizzato, lista della spesa e indicazioni pratiche</li>
         <li>2 controlli da remoto di circa 30 minuti, con aggiornamento del piano</li>
+        <li>Incontro finale di circa 45 minuti, con il materiale per mantenere nel tempo abitudini e risultati raggiunti</li>
+        <li>Telefonata di follow-up facoltativa a un mese dalla fine del percorso</li>
         <li>Risposte via email alle domande pratiche entro 2 giorni lavorativi</li>
       </ul>
       <p class="terms">Valido 4 mesi dalla prima visita. Le prestazioni svolte non sono rimborsabili: i dettagli sono nelle <a href="condizioni.html">condizioni</a>.</p>
     </article>
   </div>
-  <p class="legend" aria-hidden="true"><span><i class="f"></i>prima visita</span><span><i></i>controllo</span></p>
+  <p class="legend" aria-hidden="true"><span><i class="f"></i>prima visita</span><span><i></i>controllo</span><span><i class="e"></i>incontro finale</span><span><i class="t"></i>telefonata facoltativa</span></p>
 
   <div class="behind">
     <div>
@@ -308,6 +318,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
       <div><dt>Prima della visita</dt><dd>Lettura del questionario, degli esami e delle terapie che mi invii.</dd></div>
       <div><dt>Dopo la visita</dt><dd>Calcolo dei fabbisogni sui LARN (Livelli di assunzione di riferimento di nutrienti ed energia, SINU 2024), costruzione del piano su gusti, orari e budget, lista della spesa e ricette: in media 2–3 ore di lavoro.</dd></div>
       <div><dt>A ogni controllo</dt><dd>Confronto dei dati, correzione del piano e nuove indicazioni.</dd></div>
+      <div><dt>Alla fine</dt><dd>Un incontro dedicato e il materiale per mantenere nel tempo quello che hai costruito: schema dei pasti, porzioni, lista della spesa e strategie per pranzi fuori, feste e periodi di stress.</dd></div>
       <div><dt>Tra un incontro e l’altro</dt><dd>Risposte alle domande pratiche e, se lo desideri, raccordo con il tuo medico.</dd></div>
     </dl>
   </div>
