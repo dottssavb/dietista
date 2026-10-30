@@ -17,9 +17,13 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Valentina Burati, dietista","medicalSpecialty":"DietNutrition","url":"https://valentinaburati.com/","email":"dott.ssavb@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Via Stra 67","postalCode":"37030","addressLocality":"Colognola ai Colli","addressRegion":"VR","addressCountry":"IT"},"areaServed":"IT","founder":{"@type":"Person","name":"Valentina Burati","jobTitle":"Dietista","hasCredential":"Iscrizione all'Albo dei Dietisti, Ordine TSRM e PSTRP di Verona n. 0051"},"makesOffer":[{"@type":"Offer","name":"Percorso nutrizionale di 3 mesi","price":"235","priceCurrency":"EUR"},{"@type":"Offer","name":"Percorso nutrizionale di 5 mesi","price":"359","priceCurrency":"EUR"}]}</script>
 <meta name="description" content="Valentina Burati, dietista iscritta all’Albo. Percorsi nutrizionali di 3 e 5 mesi, in studio a Colognola ai Colli (VR) e consulenze da remoto in tutta Italia.">
 <link rel="preload" href="fonts/lora.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/inter-regular.woff" as="font" type="font/woff" crossorigin>
 <style>
 /* Identità: «radicchio di Verona». Porcellana fredda, inchiostro verde-nero, un rosso radicchio come unico accento.
    Una sola famiglia (Lora, ospitata sul sito: nessuna chiamata a servizi esterni). Il momento memorabile è il calendario dei percorsi. */
+@font-face{font-family:"Inter";src:url("fonts/inter-regular.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/inter-medium.woff") format("woff");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/inter-semibold.woff") format("woff");font-weight:600 700;font-style:normal;font-display:swap}
 @font-face{font-family:"Lora";src:url("fonts/lora.woff") format("woff");font-weight:400 700;font-style:normal;font-display:swap}
 @font-face{font-family:"Lora";src:url("fonts/lora-italic.woff") format("woff");font-weight:400 700;font-style:italic;font-display:swap}
 :root{
@@ -218,6 +222,58 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
 .cta-bar.on{transform:none}footer{padding-bottom:110px}}
 @media (max-width:900px){.creds{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* ===== Revisione «più professionale»: testo in Inter, titoli in Lora, ritmo e gerarchia più sobri ===== */
+:root{--ui:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--muted:#4E5970}
+body{font-family:var(--ui);font-size:17px;line-height:1.65;font-variant-numeric:normal;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.brand,.letterhead .who,.pull,.price,.cmp h4,.compare h3,.behind h3{font-family:var(--serif)}
+h1{font-size:clamp(2.3rem,4.6vw,3.5rem);line-height:1.08;letter-spacing:-.02em;max-width:15ch}
+h2{font-size:clamp(1.8rem,3.2vw,2.4rem);letter-spacing:-.012em}
+h3{font-family:var(--ui);font-size:1.05rem;font-weight:600;letter-spacing:-.005em}
+.cmp h4{font-weight:600}
+section{padding-block:clamp(56px,8vw,96px)}
+.hero{padding-top:clamp(36px,6vw,72px)}
+.hero .lead{font-size:1.12rem;line-height:1.65;color:var(--muted);max-width:34rem}
+.intro{font-size:1.05rem}
+/* intestazione */
+header.top{background:color-mix(in srgb,var(--paper) 96%,transparent)}
+.top .wrap{padding-block:14px}
+.brand{font-size:1.45rem}
+nav.menu{font-family:var(--ui);font-size:.95rem;font-weight:500;align-items:center;gap:6px 24px}
+nav.menu a.nav-cta{background:var(--radicchio);color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none}
+nav.menu a.nav-cta:hover{background:var(--radicchio-deep);color:#fff;text-decoration:none}
+/* pulsanti */
+.btn{font-family:var(--ui);font-size:.98rem;font-weight:600;border-radius:8px;padding:.85rem 1.4rem;letter-spacing:.005em}
+.btn.quiet{border-color:color-mix(in srgb,var(--blu) 35%,transparent);color:var(--blu)}
+/* credenziali */
+.creds{border-color:var(--line)}
+.creds b{font-family:var(--ui);font-size:.95rem;font-weight:600}
+/* chi sono */
+.pull{font-size:1.2rem}
+.reasons div{border-top:2px solid var(--blu)}
+.reasons h3{font-size:1rem;margin-bottom:6px}
+/* tappe: numeri in cerchio, più sobri */
+.steps li::before{font-family:var(--ui);font-style:normal;font-weight:600;font-size:.95rem;width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--radicchio);color:var(--radicchio);margin-bottom:6px}
+.steps .when{font-style:normal;font-size:.8rem;font-weight:500;color:var(--radicchio)}
+.steps b{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--blu)}
+/* prezzi */
+.plan h3{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:#fff}
+.price{font-size:clamp(2.6rem,5vw,3.2rem)}
+.plan ul{font-size:.95rem}
+.legend,.cal li{font-family:var(--ui)}
+/* domande */
+summary{font-family:var(--ui);font-size:1rem;font-weight:500}
+details p{font-size:.98rem}
+/* modulo */
+label{font-family:var(--ui);font-weight:500;font-size:.9rem}
+input,select,textarea{font-family:var(--ui);font-size:.98rem;background:#fff}
+.booking{box-shadow:0 18px 40px -32px rgba(23,48,92,.5)}
+/* piè di pagina scuro */
+footer.site-foot{background:var(--blu-deep);color:#C9D3E6;border-top:0;padding-block:56px 64px}
+footer.site-foot b{color:#fff;font-family:var(--serif);font-size:1.15rem;font-weight:600}
+footer.site-foot a{color:#fff}
+footer.site-foot .caps{color:var(--rosa)!important}
+@media (max-width:640px){nav.menu{flex-wrap:nowrap;overflow-x:auto;width:100%;gap:14px;font-size:.9rem;padding-bottom:2px;scrollbar-width:none}nav.menu a{white-space:nowrap}nav.menu a[href="#dove"],nav.menu a[href="#domande"]{display:none}nav.menu a.nav-cta{padding:.35rem .8rem;margin-left:auto}h1{max-width:none}}
 </style>
 </head>
 <body>
@@ -225,7 +281,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
 
 <header class="top"><div class="wrap">
   <a class="brand" href="#inizio">Valentina Burati<span>DIETISTA</span></a>
-  <nav class="menu" aria-label="Menu principale"><a href="#chi-sono">Chi sono</a><a href="#percorsi">Percorsi e prezzi</a><a href="#dove">Dove</a><a href="#domande">Domande</a><a href="#prenota">Prenota</a></nav>
+  <nav class="menu" aria-label="Menu principale"><a href="#chi-sono">Chi sono</a><a href="#percorsi">Percorsi e prezzi</a><a href="#dove">Dove</a><a href="#domande">Domande</a><a href="#prenota" class="nav-cta">Prenota</a></nav>
 </div></header>
 
 <main id="inizio">
@@ -458,7 +514,7 @@ footer ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;
 </main>
 <a class="cta-bar" id="ctabar" href="#prenota">Prenota la chiamata conoscitiva</a>
 
-<footer><div class="wrap cols">
+<footer class="site-foot"><div class="wrap cols">
   <div><b>Valentina Burati</b> <span class="caps" style="color:var(--radicchio)">DIETISTA</span><br>Ordine TSRM e PSTRP di Verona, iscrizione n. 0051<br>P.IVA 04795610239<br>Assicurata con polizza RC professionale TSRM-PSTRP<br>PEC <a href="mailto:valentina.burati@pec.tsrm-pstrp.org">valentina.burati@pec.tsrm-pstrp.org</a></div>
   <div>Studio: Via Stra 67, 37030 Colognola ai Colli (VR)<br>Consulenze da remoto in tutta Italia<br>Email <a href="mailto:dott.ssavb@gmail.com">dott.ssavb@gmail.com</a></div>
   <div>Titolo professionale: Dietista (laurea abilitante conseguita in Italia). Norme professionali: <a href="https://tsrm-pstrp.org/wp-content/uploads/2025/02/CD_Dietista.pdf" rel="noopener">Codice deontologico del Dietista</a> (FNO TSRM e PSTRP) e profilo professionale D.M. 744/1994. IVA non dovuta per le prestazioni sanitarie (art. 10, n. 18, D.P.R. 633/1972). I prezzi comprendono il contributo previdenziale INPS del 4%; sulle fatture oltre 77,47 € si aggiungono 2 € di imposta di bollo. Le informazioni di questo sito hanno carattere informativo e non sostituiscono una visita.
